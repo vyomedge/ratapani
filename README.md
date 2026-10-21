@@ -2,10 +2,28 @@
 
 The complete, SEO-optimised guide to **Ratapani Tiger Reserve** near Bhopal, built with **Next.js (React)**. It is the "R + N" of MERN; MongoDB + Express (the admin panel and blog) can be added later without rebuilding the site.
 
-## Pages
+## Pages (14)
 
 | Page | URL |
 |---|---|
+| Home | `/` |
+| History of Ratapani | `/history-of-ratapani` |
+| Ratapani Wildlife Sanctuary | `/ratapani-wildlife-sanctuary` |
+| Ratapani Tiger Reserve | `/ratapani-tiger-reserve` |
+| Ratapani Wildlife | `/ratapani-wildlife` |
+| Bhimbetka Rock Shelters | `/bhimbetka-rock-shelters` |
+| Ginnorgarh Fort | `/ginnorgarh-fort` |
+| Book Ratapani Tiger Safari | `/book-ratapani-tiger-safari` |
+| Ratapani Safari Gates | `/ratapani-safari-gates` |
+| Best Time & Safari Timings | `/best-time-to-visit-ratapani` |
+| Ratapani Map & Zones | `/ratapani-map` |
+| Places to Visit in Ratapani | `/places-to-visit-in-ratapani` |
+| How to Reach Ratapani | `/how-to-reach-ratapani` |
+| Ratapani FAQs | `/ratapani-faqs` |
+
+New pages: add the page in `app/<slug>/page.jsx`, register it in `lib/site.js` (`PAGES`, `live: true`) and it appears in the menu, footer and sitemap automatically.
+
+---|---|
 | Home | `/` |
 | History of Ratapani | `/history-of-ratapani` |
 | Ratapani Wildlife Sanctuary | `/ratapani-wildlife-sanctuary` |

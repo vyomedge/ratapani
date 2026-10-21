@@ -34,6 +34,8 @@ Key facts (last reviewed 21 October 2026; sources: MP Forest Department, MP Tour
 - [How to Reach Ratapani](${SITE.url}/how-to-reach-ratapani): by air, train and road from Bhopal
 - [Bhimbetka Rock Shelters](${SITE.url}/bhimbetka-rock-shelters): UNESCO rock art, history, paintings, timings
 - [Ginnorgarh Fort](${SITE.url}/ginnorgarh-fort): Gond hill fort, Rani Kamlapati, how to visit
+- [Ratapani Wildlife](${SITE.url}/ratapani-wildlife): species guide with IUCN status, birds, spotting tips
+- [Ratapani FAQs](${SITE.url}/ratapani-faqs): 43 answers on safari, timings, wildlife, travel and rules
 `;
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }

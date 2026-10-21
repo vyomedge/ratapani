@@ -1,17 +1,42 @@
 import Link from 'next/link';
-import { Landmark, MapPin, Clock, Palette, Footprints, Mountain, Users, Music, PawPrint, Swords, Camera, Ban, Sun, Award, ArrowRight } from 'lucide-react';
+import {
+  Landmark,
+  MapPin,
+  Clock,
+  Palette,
+  Trees,
+  TrainFront,
+  Users,
+  ShieldCheck,
+  Ban,
+  CameraOff,
+  Footprints,
+  Hourglass,
+  Home,
+  Search,
+  Navigation,
+  Ticket,
+  Target,
+  Music,
+  PawPrint,
+  Sun,
+  UserRound,
+  Leaf,
+  ArrowRight,
+} from 'lucide-react';
 import Img from '@/components/Img';
 import JsonLd from '@/components/JsonLd';
-import { PageHero, KeyTakeaways, Faq, RelatedCards, CtaBand, Toc, Sources, SectionHeading, FurtherReading, TableWrap } from '@/components/ui';
+import Gallery from '@/components/Gallery';
+import { PageHero, Faq, RelatedCards, CtaBand, Sources, SectionHeading, FurtherReading, TableWrap } from '@/components/ui';
 import { PAGES, FURTHER_READING, absoluteUrl } from '@/lib/site';
 import { pageMetadata, webPageSchema, placeId } from '@/lib/seo';
 
 const META = {
   title: 'Bhimbetka Rock Shelters: History, Paintings, Timings & Guide',
   description:
-    'Bhimbetka rock shelters, UNESCO site inside Ratapani near Bhopal: 750+ shelters, 10,000+ year-old paintings, Auditorium Cave, Zoo Rock, timings, entry and how to reach.',
+    'Bhimbetka rock shelters, UNESCO site inside Ratapani near Bhopal: 750+ shelters, 10,000+ year-old paintings, Zoo Rock, Auditorium Cave, timings, entry and how to visit.',
   path: PAGES.bhimbetka.path,
-  image: 'bhimbetka-rock-paintings-red-ochre',
+  image: 'bhimbetka-boar-rock-painting',
   keywords: [
     'Bhimbetka rock shelters',
     'Bhimbetka caves',
@@ -27,22 +52,21 @@ export const metadata = pageMetadata(META);
 
 const CRUMBS = [{ name: 'Home', path: '/' }, { name: 'Explore' }, { name: 'Bhimbetka Rock Shelters', path: META.path }];
 
-const TOC = [
-  { id: 'key-takeaways', label: 'Key takeaways' },
-  { id: 'about', label: 'What is Bhimbetka?' },
-  { id: 'history', label: 'History & discovery' },
-  { id: 'paintings', label: 'The paintings' },
-  { id: 'highlights', label: 'What to see' },
-  { id: 'visit', label: 'Timings & visiting' },
-  { id: 'faqs', label: 'Bhimbetka FAQs' },
+const GALLERY = [
+  { image: 'bhimbetka-zoo-rock', tag: 'Mesolithic', title: 'Zoo Rock', short: 'A rock face crowded with painted animals.', long: 'One of Bhimbetka’s most famous panels, covered with overlapping figures of animals such as elephants, swamp deer, bison and deer, painted over different periods.' },
+  { image: 'bhimbetka-dancing-figures', tag: 'Mesolithic', title: 'Dancing Figures', short: 'Lines of dancers in red ochre.', long: 'Groups of people dancing hand in hand appear across many shelters, showing that music and ritual were part of life thousands of years ago.' },
+  { image: 'bhimbetka-horse-elephant-procession', tag: 'Early historic', title: 'Riders & Processions', short: 'Horsemen and elephants of later periods.', long: 'Later paintings show riders on horses and elephants, warriors with weapons and processions, recording the arrival of the historic era.' },
+  { image: 'bhimbetka-balancing-rock', tag: 'Geology', title: 'Rock Towers', short: 'Sandstone shaped by wind and water.', long: 'The shelters are carved from the ancient sandstone of the Vindhya range, shaped by wind and rain into towers, arches and overhangs above the Ratapani forest.' },
+  { image: 'bhimbetka-boar-rock-painting', tag: 'Mesolithic', title: 'Boar Rock', short: 'A giant boar charging tiny hunters.', long: 'One of Bhimbetka’s best-known images: an enormous boar-like animal towering over small human figures, a powerful scene of people and wild beasts.' },
+  { image: 'bhimbetka-auditorium-rock', tag: 'Palaeolithic', title: 'Auditorium Cave', short: 'The largest shelter, like a cathedral.', long: 'The largest shelter at Bhimbetka, ringed by quartzite towers. A boulder at its entrance, known as Chief’s Rock, bears cupule markings that some researchers consider among the oldest rock art in the world.' },
 ];
 
 const PERIODS = [
-  ['I', 'Upper Palaeolithic', 'Linear, often green, figures of large animals such as bison, tigers and rhinoceros.'],
-  ['II', 'Mesolithic', 'The richest phase: small stylised humans hunting, dancing and gathering, with many animals.'],
+  ['I', 'Upper Palaeolithic', 'Linear figures of large animals such as bison, tigers and rhinoceros.'],
+  ['II', 'Mesolithic', 'The richest phase: small human figures hunting, dancing and gathering, with many animals.'],
   ['III', 'Chalcolithic', 'Scenes suggesting contact with farming communities of the Malwa plains.'],
   ['IV – V', 'Early historic', 'Riders, warriors and religious symbols in red, white and yellow.'],
-  ['VI – VII', 'Medieval', 'Geometric, more schematic designs, showing artistic decline.'],
+  ['VI – VII', 'Medieval', 'Geometric, more schematic designs.'],
 ];
 
 const FAQS = [
@@ -55,20 +79,24 @@ const FAQS = [
     a: 'The earliest Bhimbetka paintings are dated to at least 10,000 years ago (Mesolithic), and some researchers suggest older dates. The shelters were inhabited far earlier, more than 100,000 years ago, and painting continued into the medieval period.',
   },
   {
-    q: 'When did Bhimbetka become a UNESCO World Heritage Site?',
-    a: 'The Rock Shelters of Bhimbetka were inscribed as a UNESCO World Heritage Site in 2003.',
+    q: 'What are the Bhimbetka timings and entry fee?',
+    a: 'Bhimbetka is managed by the Archaeological Survey of India and is open every day from about sunrise to sunset (roughly 7 am to 6 pm). The entry fee is nominal for Indian visitors and higher for foreign nationals, with separate vehicle charges; check current rates at the ticket counter.',
   },
   {
-    q: 'What are the Bhimbetka timings and entry fee?',
-    a: 'Bhimbetka is managed by the Archaeological Survey of India and is open every day from about sunrise to sunset (roughly 7 am to 6 pm). Entry fees are modest for Indian visitors and higher for foreign nationals, with separate charges for vehicles; check the current rates at the ticket counter.',
+    q: 'How long does a visit to Bhimbetka take?',
+    a: 'Plan 1.5 to 3 hours to walk the visitor trail and see the main painted shelters, such as Zoo Rock and the Auditorium Cave, at a relaxed pace.',
+  },
+  {
+    q: 'Can I combine Bhimbetka with a Ratapani safari on the same day?',
+    a: 'Yes. Bhimbetka is beside Ratapani’s Bhimbetka safari gate and on the same NH-46 corridor as Jhiri gate. Do a morning safari, then visit the shelters around midday.',
+  },
+  {
+    q: 'Is flash photography allowed at Bhimbetka?',
+    a: 'Photography without flash is generally allowed. Do not use flash and never touch the paintings, as light and skin oils damage ancient pigments.',
   },
   {
     q: 'Who discovered Bhimbetka?',
-    a: 'The archaeologist V. S. Wakankar recognised the prehistoric importance of Bhimbetka in 1957. The site had been mentioned earlier, in 1888, as a Buddhist site by W. Kincaid.',
-  },
-  {
-    q: 'How much time do you need at Bhimbetka?',
-    a: 'Plan 1.5 to 3 hours to walk the visitor trail and see the main painted shelters at a relaxed pace.',
+    a: 'Archaeologist V. S. Wakankar recognised Bhimbetka’s prehistoric importance in 1957 after noticing the rock formations from a train. It had been mentioned earlier, in 1888, by W. Kincaid as a Buddhist site.',
   },
   {
     q: 'What does the name Bhimbetka mean?',
@@ -102,31 +130,30 @@ export default function BhimbetkaPage() {
       />
       <PageHero
         image={META.image}
-        eyebrow="UNESCO World Heritage Site · 2003"
-        title="Bhimbetka Rock Shelters"
-        intro="India’s most famous prehistoric rock art, inside the Ratapani forest: more than 750 sandstone shelters where people lived for over 100,000 years and painted hunters, dancers and animals on the walls."
+        eyebrow="UNESCO World Heritage Site · Criteria (iii) & (v)"
+        title="Bhimbetka Rock Shelters: The 100,000-Year Canvas"
+        intro="Inside the teak forests of Ratapani lies one of the world’s longest records of human life: more than 750 sandstone shelters where people lived for over 100,000 years and painted hunters, dancers and animals on the rock."
         crumbs={CRUMBS}
         badges={[
           { icon: MapPin, text: '≈ 45 km from Bhopal' },
-          { icon: Landmark, text: '750+ shelters' },
+          { icon: Landmark, text: 'UNESCO 2003' },
           { icon: Clock, text: 'Open daily' },
         ]}
       />
 
-      {/* Quick facts */}
-      <section aria-label="Quick facts" className="relative z-10 -mt-10">
+      {/* Stats */}
+      <section aria-label="Bhimbetka in numbers" className="relative z-10 -mt-10">
         <div className="container-site">
-          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-card bg-ochre/20 shadow-lift md:grid-cols-5">
+          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-card bg-ochre/20 shadow-lift md:grid-cols-4">
             {[
-              ['UNESCO listed', '2003', 'World Heritage Site'],
-              ['Rock shelters', '750+', '≈ 400 with paintings'],
-              ['Oldest paintings', '10,000+ yrs', 'Mesolithic onwards'],
-              ['From Bhopal', '≈ 45 km', '9 km from Obaidullaganj'],
-              ['Managed by', 'ASI', 'Open sunrise–sunset'],
-            ].map(([k, v, s], i) => (
-              <div key={k} className={`bg-[#E8DFC7] p-5 ${i === 4 ? 'col-span-2 md:col-span-1' : ''}`}>
+              ['Shelters', '750+', 'across seven hills'],
+              ['Habitation', '100,000+', 'years of human presence'],
+              ['UNESCO', '2003', 'World Heritage Site'],
+              ['Painted', '≈ 400', 'shelters with paintings'],
+            ].map(([k, v, s]) => (
+              <div key={k} className="bg-[#E8DFC7] p-5">
                 <dt className="font-label text-label-sm uppercase text-tertiary">{k}</dt>
-                <dd className="mt-1 font-serif text-2xl font-semibold text-ink">{v}</dd>
+                <dd className="mt-1 font-serif text-3xl font-semibold text-ink">{v}</dd>
                 <dd className="text-xs text-ink-soft">{s}</dd>
               </div>
             ))}
@@ -134,241 +161,289 @@ export default function BhimbetkaPage() {
         </div>
       </section>
 
-      <div className="bg-surface py-14 lg:py-20">
-        <div className="container-site grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4 lg:self-stretch">
-            <Toc
-              items={TOC}
-              title="Bhimbetka guide"
-              note="Bhimbetka sits inside Ratapani Tiger Reserve, so you can see Stone Age art and wild tigers on the same day."
-              cta={{ href: PAGES.gates.path + '#bhimbetka-gate', label: 'Bhimbetka safari gate' }}
-            />
-          </div>
-
-          <div className="flex flex-col gap-20 lg:col-span-8">
-            <div id="key-takeaways" className="scroll-mt-28">
-              <KeyTakeaways
-                title="Bhimbetka in 30 seconds"
-                items={[
-                  { icon: Award, title: 'UNESCO World Heritage', text: 'Inscribed in 2003 as the Rock Shelters of Bhimbetka, one of India’s oldest records of human life.' },
-                  { icon: Mountain, title: 'Seven hills, 750+ shelters', text: 'Spread over about 10 km of the Vindhya hills; the Bhimbetka group alone has 243 shelters.' },
-                  { icon: Palette, title: 'Paintings 10,000+ years old', text: 'Hunters, dancers and animals in red, white, yellow and green, from the Mesolithic to the medieval era.' },
-                  { icon: MapPin, title: 'Inside Ratapani', text: '45 km from Bhopal on NH-46, right next to the Bhimbetka safari gate of the tiger reserve.' },
-                ]}
-              />
+      <div className="bg-surface py-16 md:py-20">
+        <div className="container-site space-y-24">
+          {/* Tenets */}
+          <section aria-labelledby="tenets-title">
+            <SectionHeading eyebrow="Prehistoric dossier" title="Why Bhimbetka Matters" id="tenets-title" tone="ochre" />
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                [Palette, 'A cradle of human creativity', 'Paintings span the Palaeolithic, Mesolithic, Chalcolithic, early historic and medieval periods, mostly in red and white natural pigments.', 'Thousands of years of art'],
+                [Trees, 'Inside the Ratapani forest', 'The shelters sit within Ratapani Wildlife Sanctuary, now a tiger reserve, so prehistoric art and living wildlife share one landscape.', 'Living landscape'],
+                [TrainFront, 'A rediscovery from a train', 'In 1957 archaeologist V. S. Wakankar noticed the rock formations from a train window and set out to explore them.', 'Rediscovered 1957'],
+                [Users, 'A living tradition', 'UNESCO notes that traditions in nearby villages echo themes seen in the paintings, linking past and present.', 'Cultural continuity'],
+              ].map(([Icon, t, d, tag], i) => (
+                <article key={t} className="reveal flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-tertiary-fixed text-tertiary">
+                    <Icon className="h-6 w-6" aria-hidden />
+                  </span>
+                  <h3 className="mb-2 text-xl text-ink">{t}</h3>
+                  <p className="flex-1 text-sm leading-relaxed text-ink-soft">{d}</p>
+                  <span className="mt-4 font-label text-label-sm uppercase text-primary">{tag}</span>
+                </article>
+              ))}
             </div>
+          </section>
 
-            <section id="about" className="scroll-mt-28 grid grid-cols-1 gap-8 md:grid-cols-2" aria-labelledby="about-title">
-              <div>
-                <SectionHeading eyebrow="Overview" title="What Is Bhimbetka?" id="about-title" />
-                <div className="prose-rp reveal">
-                  <p>
-                    The <strong>Bhimbetka rock shelters</strong> are a group of natural sandstone overhangs on the southern edge of the Vindhya range in
-                    Raisen district, Madhya Pradesh. Across seven hills (Vinayaka, Bhonrawali, Bhimbetka, Lakha Juar east and west, Jhondra and Muni
-                    Babaki Pahari) archaeologists have identified more than 750 shelters, around 400 of them painted.
-                  </p>
-                  <p>
-                    Together they form one of the longest records of human life anywhere: continuous settlement from the Stone Age to around the 2nd
-                    century BCE, and paintings that span thousands of years. The site lies within the{' '}
-                    <Link href={PAGES.sanctuary.path}>Ratapani Wildlife Sanctuary</Link>, now part of{' '}
-                    <Link href={PAGES.tigerReserve.path}>Ratapani Tiger Reserve</Link>.
-                  </p>
-                  <p>
-                    The name links to <em>Bhima</em> of the Mahabharata and <em>baithaka</em>, a seat: local tradition says Bhima rested here
-                    during the Pandavas’ exile.
-                  </p>
+          {/* UNESCO */}
+          <section aria-labelledby="unesco-title" className="reveal grid grid-cols-1 gap-8 overflow-hidden rounded-[1.75rem] bg-forest bg-contour-light p-8 text-sand md:p-12 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-ochre/30 px-3 py-1 font-label text-label-sm uppercase text-tertiary-dim">
+                <ShieldCheck className="h-4 w-4" aria-hidden /> World Heritage list · Ref. 925
+              </p>
+              <h2 id="unesco-title" className="mb-4 text-[2rem] leading-tight text-white md:text-headline-lg">
+                UNESCO Inscription: Criteria (iii) &amp; (v)
+              </h2>
+              <p className="mb-6 leading-relaxed text-sand/80">
+                The Rock Shelters of Bhimbetka were inscribed in 2003 for their long, continuous record of human life and the close interaction
+                between people and the landscape.
+              </p>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="rounded-xl bg-white/10 p-5">
+                  <p className="font-label text-label-sm uppercase text-amber">Criterion (iii)</p>
+                  <p className="mt-1 text-sm text-sand/85">Testimony to a cultural tradition, shown through rock art spanning many thousands of years.</p>
+                </div>
+                <div className="rounded-xl bg-white/10 p-5">
+                  <p className="font-label text-label-sm uppercase text-amber">Criterion (v)</p>
+                  <p className="mt-1 text-sm text-sand/85">A link between hunter-gatherer life and the landscape, echoed in the traditions of surrounding villages.</p>
                 </div>
               </div>
-              <figure className="reveal overflow-hidden rounded-card bg-surface-low shadow-sm">
-                <div className="relative h-80 bg-forest md:h-full md:min-h-[420px]">
-                  <Img name="bhimbetka-rock-shelters-unesco" sizes="(min-width: 768px) 35vw, 100vw" />
-                </div>
-              </figure>
-            </section>
-
-            <section id="history" className="scroll-mt-28" aria-labelledby="hist-title">
-              <SectionHeading eyebrow="Deep time" tone="ochre" title="History & Discovery of Bhimbetka" id="hist-title" />
-              <ol className="relative space-y-8 pl-8 sm:pl-12">
-                <span className="absolute bottom-3 left-3 top-3 w-0.5 bg-surface-highest sm:left-4" aria-hidden />
+            </div>
+            <div className="rounded-card bg-forest-deep/80 p-6 lg:col-span-5">
+              <p className="mb-4 font-label text-label-md uppercase text-amber">Visitor conservation rules</p>
+              <ul className="space-y-4">
                 {[
-                  ['100,000+ years ago', 'First inhabitants', 'Stone tools of the Acheulean period show that early humans used the shelters more than 100,000 years ago.'],
-                  ['10,000+ years ago', 'The painters', 'Mesolithic hunter-gatherers painted the richest scenes: hunts, dances, animals and daily life.'],
-                  ['to 2nd century BCE', 'Continuous settlement', 'The Archaeological Survey of India records human settlement continuing into the historic period.'],
-                  ['1888', 'First mention', 'W. Kincaid, a British official, mentioned Bhimbetka in a scholarly paper, describing it as a Buddhist site.'],
-                  ['1957', 'Rediscovery', 'Archaeologist V. S. Wakankar recognised the shelters’ prehistoric significance; excavations followed in the 1970s.'],
-                  ['2003', 'World Heritage', 'UNESCO inscribed the Rock Shelters of Bhimbetka on the World Heritage List.'],
-                ].map(([date, title, text]) => (
-                  <li key={title} className="reveal relative">
-                    <span className="absolute -left-8 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-surface shadow-sm sm:-left-12" aria-hidden>
-                      <span className="h-3.5 w-3.5 rounded-full bg-ochre" />
+                  [Ban, 'Never touch the paintings', 'Oils from skin permanently damage ancient pigments.'],
+                  [CameraOff, 'No flash photography', 'Strong light speeds up pigment fading.'],
+                  [Footprints, 'Stay on the marked path', 'Keep to the visitor trail and railings.'],
+                ].map(([Icon, t, d]) => (
+                  <li key={t} className="flex gap-3">
+                    <Icon className="mt-0.5 h-5 w-5 shrink-0 text-tertiary-dim" aria-hidden />
+                    <span>
+                      <strong className="block text-white">{t}</strong>
+                      <span className="text-sm text-sand/70">{d}</span>
                     </span>
-                    <span className="rounded-full bg-tertiary-fixed/60 px-3 py-1 font-label text-label-md uppercase text-tertiary">{date}</span>
-                    <h3 className="mb-1 mt-3 text-xl text-ink">{title}</h3>
-                    <p className="leading-relaxed text-ink-soft">{text}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          {/* At a glance */}
+          <section aria-labelledby="glance-title">
+            <SectionHeading eyebrow="Field metrics" title="Bhimbetka at a Glance" id="glance-title" />
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                [Hourglass, 'Age', '100,000+ years', 'Human presence from the Stone Age (Acheulean) to around the 2nd century BCE; painting into the medieval era.'],
+                [Home, 'Shelters', '750+ across 7 hills', 'Spread over about 10 km; the Bhimbetka group has 243 shelters and nearby Lakha Juar 178.'],
+                [Search, 'Rediscovered by', 'V. S. Wakankar, 1957', 'The archaeologist who first recognised the site’s prehistoric significance.'],
+                [Navigation, 'Distance', '≈ 45 km from Bhopal', 'South-east on NH-46, about 9 km beyond Obaidullaganj.'],
+                [Clock, 'Timings', 'About 7 am – 6 pm', 'Open every day, all year, including the monsoon.'],
+                [Ticket, 'Entry', 'Nominal ASI fee', 'Lower for Indian citizens, higher for foreigners; vehicle charges extra. Check at the counter.'],
+              ].map(([Icon, k, v, d], i) => (
+                <div key={k} className="reveal flex gap-4 rounded-card bg-white p-5 shadow-sm" style={{ '--reveal-delay': `${(i % 3) * 70}ms` }}>
+                  <Icon className="mt-1 h-6 w-6 shrink-0 text-primary" aria-hidden />
+                  <div>
+                    <p className="font-label text-label-sm uppercase text-outline">{k}</p>
+                    <p className="font-serif text-xl text-ink">{v}</p>
+                    <p className="mt-1 text-sm text-ink-soft">{d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Discovery */}
+          <section aria-labelledby="discovery-title" className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <SectionHeading eyebrow="Discovery" tone="ochre" title="From a Train Window to World Heritage" id="discovery-title" />
+              <div className="prose-rp reveal text-lg">
+                <p>
+                  In 1957 the archaeologist <strong>Vishnu Shridhar Wakankar</strong> was travelling by train through the Vindhya hills south of Bhopal
+                  when he noticed unusual rock formations rising above the forest. He returned to explore them and found shelter after shelter
+                  painted with animals, hunters and dancers.
+                </p>
+                <p>
+                  The site had been noted once before, in 1888, when the British official W. Kincaid described it as a Buddhist site based on local
+                  accounts. Wakankar’s work showed its true age. Excavations in the 1970s revealed stone tools and deposits reaching back more than
+                  100,000 years, and in 2003 UNESCO added the Rock Shelters of Bhimbetka to the World Heritage List.
+                </p>
+              </div>
+            </div>
+            <div className="reveal rounded-card bg-surface-low p-6 lg:col-span-5">
+              <p className="mb-4 font-label text-label-sm uppercase text-outline">Coordinates ≈ 22°56′N, 77°37′E</p>
+              <ol className="space-y-4">
+              {[
+                ['1888', 'First written mention by W. Kincaid'],
+                ['1957', 'V. S. Wakankar recognises its prehistoric importance'],
+                ['1970s', 'Systematic excavations reveal the full scale'],
+                ['2003', 'Inscribed as a UNESCO World Heritage Site'],
+              ].map(([y, t]) => (
+                <li key={y} className="flex gap-4 border-b border-forest/10 pb-3 last:border-0">
+                  <span className="font-serif text-2xl font-semibold text-tertiary">{y}</span>
+                  <span className="text-ink-soft">{t}</span>
+                </li>
+              ))}
+            </ol>
+            </div>
+          </section>
+
+          {/* Gallery */}
+          <section aria-labelledby="gallery-title">
+            <SectionHeading
+              eyebrow="Prehistoric masterpieces"
+              title="Gallery of the Ancient Artists"
+              intro="Tap any image to enlarge it and read more about what it shows."
+              id="gallery-title"
+            />
+            <Gallery items={GALLERY} />
+          </section>
+
+          {/* What paintings show */}
+          <section aria-labelledby="paint-title">
+            <SectionHeading
+              eyebrow="Iconography"
+              title="What the Bhimbetka Paintings Show"
+              intro="The paintings record everyday life, belief and the animals people lived alongside."
+              id="paint-title"
+              tone="moss"
+            />
+            <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {[
+                [Target, 'The hunt', 'Hunters with bows and arrows, barbed spears and sticks chase or trap animals, sometimes in groups.', 'Weapons · tactics'],
+                [Music, 'Dance & music', 'Lines and circles of dancers, with drums and other instruments, suggest celebration and ritual.', 'Ritual · community'],
+                [PawPrint, 'An ancient zoo', 'Bison, deer, antelope, boar, rhinoceros, elephants, big cats, sloth bears and birds appear across the shelters.', 'Animals · environment'],
+                [UserRound, 'Daily life', 'Mothers and children, food gathering, burials and later riders, warriors and battles.', 'People · society'],
+              ].map(([Icon, t, d, tag], i) => (
+                <div key={t} className="reveal flex gap-4 rounded-card bg-white p-5 shadow-sm" style={{ '--reveal-delay': `${i * 70}ms` }}>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tertiary-fixed text-tertiary">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <div>
+                    <h3 className="mb-1 text-xl text-ink">{t}</h3>
+                    <p className="text-sm leading-relaxed text-ink-soft">{d}</p>
+                    <p className="mt-2 font-label text-label-sm uppercase text-outline">{tag}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <TableWrap caption="Periods of Bhimbetka rock paintings" note="Periods as described by archaeologists studying Bhimbetka; exact dates for each phase are debated.">
+              <thead>
+                <tr>
+                  <th scope="col">Period</th>
+                  <th scope="col">Era</th>
+                  <th scope="col">Typical subjects &amp; style</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PERIODS.map(([p, e, s]) => (
+                  <tr key={p}>
+                    <td>{p}</td>
+                    <td>{e}</td>
+                    <td>{s}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </TableWrap>
+          </section>
+
+          {/* Living wilderness */}
+          <section aria-labelledby="living-title" className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+            <div>
+              <SectionHeading
+                eyebrow="Where prehistory meets the tiger"
+                title="The Living Wilderness Around Bhimbetka"
+                intro="The ravines and waterholes that sustained Stone Age people still sustain tigers, leopards, sloth bears and hundreds of bird species today."
+                id="living-title"
+              />
+              <p className="mb-4 font-label text-label-md uppercase text-primary">A one-day heritage + wildlife plan</p>
+              <ol className="space-y-3">
+                {[
+                  ['Early morning', 'Tiger safari', 'Morning round from Jhiri or the Bhimbetka gate'],
+                  ['Late morning – early afternoon', 'Bhimbetka walk', 'Shaded shelters, softer light on the rock'],
+                  ['Afternoon', 'Bhojpur or Ratapani Dam', 'Temple visit or reservoir views'],
+                ].map(([t, a, d]) => (
+                  <li key={a} className="reveal flex gap-4 rounded-xl bg-white p-4 shadow-sm">
+                    <span className="w-28 shrink-0 font-label text-label-sm uppercase text-tertiary">{t}</span>
+                    <span>
+                      <strong className="block text-ink">{a}</strong>
+                      <span className="text-sm text-ink-soft">{d}</span>
+                    </span>
                   </li>
                 ))}
               </ol>
-            </section>
+              <Link href={PAGES.gates.path + '#bhimbetka-gate'} className="btn-amber mt-6">
+                Bhimbetka safari gate <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+            </div>
+            <div className="reveal relative h-[460px] overflow-hidden rounded-card bg-forest shadow-2xl">
+              <Img name="bhimbetka-balancing-rock" sizes="(min-width: 1024px) 50vw, 100vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              <p className="absolute inset-x-5 bottom-5 flex items-center gap-2 text-sm text-white">
+                <ShieldCheck className="h-4 w-4 text-amber" aria-hidden /> The Bhimbetka safari gate sits beside the rock shelters.
+              </p>
+            </div>
+          </section>
 
-            <section id="paintings" className="scroll-mt-28" aria-labelledby="paint-title">
-              <SectionHeading
-                eyebrow="Rock art"
-                title="Bhimbetka Paintings: What They Show"
-                intro="Painted with natural pigments, often in red and white, many survive because they sit deep in niches and on inner walls."
-                id="paint-title"
-                tone="moss"
-              />
-              <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {[
-                  [PawPrint, 'Animals', 'Bison, deer, antelope, boar, rhinoceros, elephants, tigers and other big cats, sloth bears and birds.'],
-                  [Swords, 'Hunting', 'Hunters with bows and arrows, barbed spears and sticks, often chasing or trapping large animals.'],
-                  [Music, 'Dance & music', 'Groups dancing in lines and circles, with drums and other instruments.'],
-                  [Users, 'Daily life', 'Mothers and children, food gathering, burials and, later, riders, warriors and battles.'],
-                ].map(([Icon, t, d], i) => (
-                  <div key={t} className="reveal flex gap-4 rounded-card bg-white p-5 shadow-sm" style={{ '--reveal-delay': `${i * 70}ms` }}>
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tertiary-fixed text-tertiary">
-                      <Icon className="h-5 w-5" aria-hidden />
-                    </span>
-                    <div>
-                      <h3 className="mb-1 text-xl text-ink">{t}</h3>
-                      <p className="text-sm leading-relaxed text-ink-soft">{d}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mb-8 grid grid-cols-2 gap-4">
-                <div className="reveal relative h-56 overflow-hidden rounded-card bg-forest sm:h-72">
-                  <Img name="bhimbetka-rock-art-closeup" sizes="(min-width: 1024px) 30vw, 50vw" />
-                </div>
-                <div className="reveal relative h-56 overflow-hidden rounded-card bg-forest sm:h-72" style={{ '--reveal-delay': '100ms' }}>
-                  <Img name="bhimbetka-rock-paintings-red-ochre" sizes="(min-width: 1024px) 30vw, 50vw" />
-                </div>
-              </div>
-              <TableWrap caption="Periods of Bhimbetka rock paintings" note="Periods as described by archaeologists studying Bhimbetka; dates for each phase are debated.">
-                <thead>
-                  <tr>
-                    <th scope="col">Period</th>
-                    <th scope="col">Era</th>
-                    <th scope="col">Typical subjects &amp; style</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {PERIODS.map(([p, e, s]) => (
-                    <tr key={p}>
-                      <td>{p}</td>
-                      <td>{e}</td>
-                      <td>{s}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </TableWrap>
-            </section>
+          {/* Tips */}
+          <section aria-labelledby="tips-title">
+            <SectionHeading eyebrow="Naturalist guidance" title="Visiting Bhimbetka: Practical Tips" id="tips-title" tone="ochre" />
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                [Sun, 'Choose your light', 'Mornings are cooler and quieter; around midday the overhangs are evenly lit and shaded.'],
+                [Footprints, 'Wear good shoes', 'The trail has uneven rock steps and some climbs. Carry water.'],
+                [Users, 'Hire a guide', 'Local guides at the entrance help you find and understand the paintings.'],
+                [Leaf, 'Leave no trace', 'Avoid single-use plastic, keep noise low and carry all litter back.'],
+              ].map(([Icon, t, d], i) => (
+                <article key={t} className="reveal rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                  <Icon className="mb-4 h-7 w-7 text-primary" aria-hidden />
+                  <h3 className="mb-2 text-xl text-ink">{t}</h3>
+                  <p className="text-sm leading-relaxed text-ink-soft">{d}</p>
+                </article>
+              ))}
+            </div>
+          </section>
 
-            <section id="highlights" className="scroll-mt-28" aria-labelledby="hl-title">
-              <SectionHeading eyebrow="Must-see" title="Highlights of Bhimbetka" id="hl-title" />
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                {[
-                  ['bhimbetka-rock-shelter-interior', 'Auditorium Cave', 'The largest shelter, a cathedral-like space ringed by quartzite towers, with a great boulder (“Chief’s Rock”) at its entrance marked with ancient cupules.'],
-                  ['bhimbetka-rock-paintings-hunting-scene', 'Zoo Rock', 'A rock face crowded with painted animals, including elephants, swamp deer, bison and deer, from several periods.'],
-                  ['bhimbetka-sandstone-towers-sunset', 'Rock formations', 'Wind- and water-carved sandstone towers and overhangs that make the walk as striking as the art.'],
-                ].map(([img, t, d], i) => (
-                  <article key={t} className="reveal overflow-hidden rounded-card bg-white shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
-                    <div className="relative h-52 bg-forest">
-                      <Img name={img} sizes="(min-width: 768px) 33vw, 100vw" />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="mb-2 text-headline-sm text-ink">{t}</h3>
-                      <p className="text-sm leading-relaxed text-ink-soft">{d}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
+          <FurtherReading
+            title="Read the complete guide"
+            links={[
+              {
+                href: FURTHER_READING.bhimbetka,
+                label: 'Bhimbetka: India’s ancient rock art wonder, the complete guide (2026)',
+                text: 'In-depth visitor guide with painting periods, key attractions, nearby places and travel tips.',
+              },
+            ]}
+          />
 
-            <section id="visit" className="scroll-mt-28" aria-labelledby="visit-title">
-              <SectionHeading eyebrow="Plan your visit" title="Bhimbetka Timings, Entry & Visitor Tips" id="visit-title" tone="ochre" />
-              <TableWrap caption="Bhimbetka visitor information" note="Fees and timings are set by the Archaeological Survey of India and can change; confirm at the ticket counter.">
-                <thead>
-                  <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Details</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>Timings</td><td>Open every day, about sunrise to sunset (≈ 7 am – 6 pm)</td></tr>
-                  <tr><td>Entry</td><td>Modest fee for Indian visitors; higher for foreign nationals; vehicle charges extra</td></tr>
-                  <tr><td>Time needed</td><td>1.5 – 3 hours</td></tr>
-                  <tr><td>Best season</td><td>October to March; early mornings in summer</td></tr>
-                  <tr><td>Open in monsoon?</td><td>Yes, open all year</td></tr>
-                  <tr><td>Location</td><td>≈ 45 km from Bhopal; 9 km from Obaidullaganj, off NH-46</td></tr>
-                </tbody>
-              </TableWrap>
-              <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {[
-                  [Sun, 'Go early', 'Mornings are cooler and quieter, and the light is softer on the rock.'],
-                  [Ban, 'Never touch', 'Skin oils damage pigments that have survived thousands of years.'],
-                  [Camera, 'No flash', 'Photograph without flash; use a higher ISO in the shaded shelters.'],
-                  [Footprints, 'Good shoes', 'The trail has uneven rock steps; carry water.'],
-                ].map(([Icon, t, d]) => (
-                  <div key={t} className="reveal rounded-xl bg-surface-low p-5">
-                    <Icon className="mb-2 h-6 w-6 text-primary" aria-hidden />
-                    <h3 className="font-sans text-base font-bold text-ink">{t}</h3>
-                    <p className="text-sm text-ink-soft">{d}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="reveal mt-8 flex flex-col gap-4 rounded-card bg-forest p-6 text-sand md:flex-row md:items-center md:justify-between">
-                <div>
-                  <p className="font-label text-label-sm uppercase text-amber">Wildlife + heritage</p>
-                  <p className="font-serif text-2xl text-white">Add a tiger safari to your Bhimbetka trip</p>
-                  <p className="text-sm text-sand/70">The Bhimbetka gate is beside the shelters, and Jhiri gate is on the same highway.</p>
-                </div>
-                <Link href={PAGES.gates.path} className="btn-amber shrink-0">
-                  Safari gates <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
-              </div>
-            </section>
-
-            <FurtherReading
-              title="Read the complete guide"
-              links={[
-                {
-                  href: FURTHER_READING.bhimbetka,
-                  label: 'Bhimbetka: India’s ancient rock art wonder, the complete guide (2026)',
-                  text: 'In-depth visitor guide with painting periods, key attractions, nearby places and travel tips.',
-                },
-              ]}
-            />
-
-            <Faq faqs={FAQS} title="Bhimbetka Rock Shelters: FAQs" eyebrow="Frequently asked" />
-
-            <RelatedCards
-              cards={[
-                { href: PAGES.history.path, image: 'vindhya-hills-misty-sunrise-ratapani', tag: 'History', title: 'History of Ratapani', text: 'Bhimbetka’s place in 100,000 years of Ratapani’s story.' },
-                { href: PAGES.ginnorgarh.path, image: 'ginnorgarh-fort-ruins-forest', tag: 'Heritage', title: 'Ginnorgarh Fort', text: 'The Gond hill fort hidden inside the tiger reserve.' },
-                { href: PAGES.reach.path, image: 'ratapani-forest-highway-road-trip', tag: 'Travel', title: 'How to Reach Ratapani', text: 'Air, rail and road routes from Bhopal.' },
-              ]}
-            />
-
-            <Sources
-              items={[
-                { label: 'UNESCO World Heritage Centre: Rock Shelters of Bhimbetka', url: 'https://whc.unesco.org/en/list/925/' },
-                { label: 'Wikipedia: Bhimbetka rock shelters', url: 'https://en.wikipedia.org/wiki/Bhimbetka_rock_shelters' },
-                { label: 'MP Tourism: Ratapani and Bhimbetka', url: 'https://mptourism.com/ratapani-tiger-reserve-wilderness-near-bhopal.html' },
-              ]}
-            />
+          <div className="mx-auto max-w-4xl">
+            <Faq faqs={FAQS} title="Bhimbetka Rock Shelters: FAQs" eyebrow="Inquiries & answers" />
           </div>
+
+          <RelatedCards
+            cards={[
+              { href: PAGES.history.path, image: 'vindhya-hills-misty-sunrise-ratapani', tag: 'History', title: 'History of Ratapani', text: 'Bhimbetka’s place in 100,000 years of Ratapani’s story.' },
+              { href: PAGES.ginnorgarh.path, image: 'ginnorgarh-fort-ruins-forest', tag: 'Heritage', title: 'Ginnorgarh Fort', text: 'The Gond hill fort hidden inside the tiger reserve.' },
+              { href: PAGES.wildlife.path, image: 'indian-leopard-teak-branch-ratapani', tag: 'Wildlife', title: 'Ratapani Wildlife', text: 'The animals that share Bhimbetka’s hills today.' },
+            ]}
+          />
+
+          <Sources
+            items={[
+              { label: 'UNESCO World Heritage Centre: Rock Shelters of Bhimbetka', url: 'https://whc.unesco.org/en/list/925/' },
+              { label: 'Wikipedia: Bhimbetka rock shelters', url: 'https://en.wikipedia.org/wiki/Bhimbetka_rock_shelters' },
+              { label: 'MP Tourism: Ratapani and Bhimbetka', url: 'https://mptourism.com/ratapani-tiger-reserve-wilderness-near-bhopal.html' },
+            ]}
+          />
         </div>
       </div>
 
       <CtaBand
-        eyebrow="Stone Age to tiger country"
-        title="See Bhimbetka and Ratapani’s Tigers in One Day"
-        text="Plan a morning safari and a midday walk among the painted shelters."
-        primary={{ href: PAGES.bookSafari.path, label: 'Book a safari' }}
-        secondary={{ href: PAGES.places.path, label: 'More places to visit' }}
+        eyebrow="Extend your journey"
+        title="From Prehistoric Art to Roaming Bengal Tigers"
+        text="Plan a safari through Ratapani’s gates and explore more sights across the Vindhyan landscape."
+        primary={{ href: PAGES.gates.path, label: 'Safari gates & routes' }}
+        secondary={{ href: PAGES.places.path, label: 'Places to visit' }}
       />
     </>
   );
 }
-

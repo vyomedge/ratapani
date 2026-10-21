@@ -66,9 +66,9 @@ const PILLARS = [
   {
     image: 'indian-leopard-ratapani',
     tag: 'Forest & fauna',
-    title: 'Wildlife Sanctuary & Ecology',
-    text: 'Teak and bamboo forests, reservoirs and 35+ mammal species including leopards, sloth bears and dholes.',
-    href: PAGES.sanctuary.path,
+    title: 'Wildlife of Ratapani',
+    text: 'Tigers, leopards, sloth bears, dholes, deer and 249 bird species: a field guide to Ratapani’s animals.',
+    href: PAGES.wildlife.path,
   },
   {
     image: 'bhimbetka-rock-paintings-hunting-scene',
@@ -348,6 +348,9 @@ export default function HomePage() {
             <div className="reveal">
               <span className="eyebrow text-tertiary">Ratapani wildlife</span>
               <h2 className="text-[2.25rem] leading-tight tracking-tight text-ink md:text-display-lg">Animals of the Teak Forest</h2>
+              <Link href={PAGES.wildlife.path} className="mt-3 inline-flex items-center gap-1 font-label text-label-md uppercase text-primary">
+                Full wildlife guide <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
             </div>
           }
         >
@@ -535,6 +538,11 @@ export default function HomePage() {
       <section className="bg-surface-low py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
           <Faq faqs={FAQS} title="Ratapani Safari: Frequently Asked Questions" eyebrow="Quick answers" center />
+          <div className="mt-8 text-center">
+            <Link href={PAGES.faqs.path} className="btn-outline">
+              See all 43 Ratapani FAQs
+            </Link>
+          </div>
         </div>
       </section>
 
