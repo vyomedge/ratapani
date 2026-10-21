@@ -12,9 +12,10 @@
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const manifest = JSON.parse(await fs.readFile(path.join(root, 'data/images.json'), 'utf8'));
 const outDir = path.join(root, 'public/images');
 const onlyMissing = process.argv.includes('--if-missing');
