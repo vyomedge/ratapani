@@ -23,16 +23,6 @@ The complete, SEO-optimised guide to **Ratapani Tiger Reserve** near Bhopal, bui
 
 New pages: add the page in `app/<slug>/page.jsx`, register it in `lib/site.js` (`PAGES`, `live: true`) and it appears in the menu, footer and sitemap automatically.
 
----|---|
-| Home | `/` |
-| History of Ratapani | `/history-of-ratapani` |
-| Ratapani Wildlife Sanctuary | `/ratapani-wildlife-sanctuary` |
-| Ratapani Tiger Reserve | `/ratapani-tiger-reserve` |
-| Book Ratapani Tiger Safari | `/book-ratapani-tiger-safari` |
-| Ratapani Safari Gates | `/ratapani-safari-gates` |
-
-Planned pages (Wildlife, Bhimbetka, Best Time, Map, Places to Visit, How to Reach, FAQs) are already listed in `lib/site.js` with `live: false`. Build the page, switch it to `live: true`, and it appears automatically in the menu, footer and sitemap.
-
 ---
 
 ## Step-by-step for beginners
