@@ -296,3 +296,23 @@ export function Sources({ items }) {
     </section>
   );
 }
+
+/* ---------------- Further reading (external, dofollow) ---------------- */
+export function FurtherReading({ title = 'Further reading', links }) {
+  return (
+    <aside aria-label={title} className="reveal rounded-card border-l-4 border-amber bg-amber/5 p-6">
+      <p className="mb-3 font-label text-label-md uppercase text-primary">{title}</p>
+      <ul className="space-y-3">
+        {links.map((l) => (
+          <li key={l.href}>
+            <a href={l.href} target="_blank" rel="noopener" className="group inline-flex items-start gap-2 font-serif text-xl leading-snug text-ink hover:text-primary">
+              <ArrowRight className="mt-1.5 h-4 w-4 shrink-0 text-amber transition-transform group-hover:translate-x-1" aria-hidden />
+              <span className="underline decoration-amber/50 underline-offset-4">{l.label}</span>
+            </a>
+            {l.text && <p className="ml-6 mt-1 text-sm text-ink-soft">{l.text}</p>}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+}

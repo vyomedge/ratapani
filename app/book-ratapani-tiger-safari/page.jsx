@@ -307,6 +307,14 @@ export default function BookSafariPage() {
             </div>
           </section>
 
+          <p className="reveal -mt-16 text-sm text-ink-soft">
+            Month-by-month weather and sighting guide:{' '}
+            <Link href={PAGES.bestTime.path} className="font-semibold text-primary underline">
+              best time to visit Ratapani
+            </Link>
+            .
+          </p>
+
           {/* Checklists */}
           <section aria-label="Documents and packing checklist" className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {[

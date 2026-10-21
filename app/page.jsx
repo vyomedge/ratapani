@@ -75,7 +75,7 @@ const PILLARS = [
     tag: 'UNESCO heritage',
     title: 'Bhimbetka Rock Shelters',
     text: 'Prehistoric rock paintings of hunters, deer and bison inside the Ratapani forest.',
-    href: `${PAGES.history.path}#prehistory`,
+    href: PAGES.bhimbetka.path,
   },
   {
     image: 'ratapani-safari-gate-jeep',
@@ -89,7 +89,7 @@ const PILLARS = [
     tag: 'Hidden landmarks',
     title: 'Ginnorgarh Fort & Old Ruins',
     text: 'A hilltop Gond fort reachable only on foot from Delawadi, famous for its birdlife and legends.',
-    href: `${PAGES.history.path}#medieval`,
+    href: PAGES.ginnorgarh.path,
   },
 ];
 
@@ -169,7 +169,7 @@ const FAQS = [
 const JOURNAL = [
   { image: 'forest-staff-pugmark-monitoring', cat: 'Conservation', read: '6 min read', title: 'Inside India’s 57th Tiger Reserve', text: 'Why Ratapani waited 16 years for tiger reserve status, and what its core and buffer zones protect.', href: PAGES.tigerReserve.path },
   { image: 'tiger-pugmark-riverbed-sand', cat: 'Safari guide', read: '5 min read', title: 'How to Book a Ratapani Tiger Safari', text: 'Gates, fees, timings, documents and the mistakes to avoid when booking your permit online.', href: PAGES.bookSafari.path },
-  { image: 'bhimbetka-rock-shelter-ceiling-art', cat: 'Archaeology', read: '7 min read', title: '100,000 Years of Ratapani History', text: 'From Bhimbetka’s painted shelters to Ginnorgarh Fort and the birth of a sanctuary.', href: PAGES.history.path },
+  { image: 'bhimbetka-rock-art-closeup', cat: 'Archaeology', read: '7 min read', title: '100,000 Years of Ratapani History', text: 'From Bhimbetka’s painted shelters to Ginnorgarh Fort and the birth of a sanctuary.', href: PAGES.history.path },
 ];
 
 export default function HomePage() {
@@ -439,6 +439,11 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+          <div className="reveal mt-10 text-center">
+            <Link href={PAGES.bestTime.path} className="btn-outline">
+              Month-by-month guide &amp; safari timings
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -462,8 +467,8 @@ export default function HomePage() {
               cats. The earliest paintings date back at least 10,000 years, making Ratapani one of the few places where you can see
               wild tigers and Stone Age art on the same day.
             </p>
-            <Link href={`${PAGES.history.path}#prehistory`} className="btn-ochre reveal">
-              Explore Bhimbetka history <ArrowRight className="h-4 w-4" aria-hidden />
+            <Link href={PAGES.bhimbetka.path} className="btn-ochre reveal">
+              Explore Bhimbetka rock shelters <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
           <div className="reveal">
@@ -504,7 +509,7 @@ export default function HomePage() {
           </div>
           <div className="reveal lg:col-span-7">
             <div className="relative h-[450px] overflow-hidden rounded-card bg-surface-high shadow-lg">
-              <Img name="ratapani-landscape-map" sizes="(min-width: 1024px) 58vw, 100vw" />
+              <Img name="ratapani-parchment-map" sizes="(min-width: 1024px) 58vw, 100vw" />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
               <span className="absolute right-4 top-4 flex items-center gap-1 rounded-full bg-white/90 px-4 py-2 font-label text-label-sm uppercase text-charcoal backdrop-blur-md">
                 <MapPin className="h-3.5 w-3.5" aria-hidden /> 22.918° N, 77.722° E
@@ -512,9 +517,14 @@ export default function HomePage() {
               <div className="absolute inset-x-6 bottom-6 rounded-xl bg-forest-deep/90 p-4 text-white backdrop-blur-md">
                 <p className="font-serif text-headline-sm">Three safari gates</p>
                 <p className="mb-3 text-sm text-white/70">Jhiri (34 km), Bhimbetka (44 km) and Delawadi (52 km) from Bhopal railway station.</p>
-                <Link href={PAGES.gates.path} className="inline-flex items-center gap-1 font-label text-label-md uppercase text-amber hover:text-white">
-                  Compare the gates <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
+                <div className="flex flex-wrap gap-x-6 gap-y-2">
+                  <Link href={PAGES.map.path} className="inline-flex items-center gap-1 font-label text-label-md uppercase text-amber hover:text-white">
+                    Open the map <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                  <Link href={PAGES.gates.path} className="inline-flex items-center gap-1 font-label text-label-md uppercase text-amber hover:text-white">
+                    Compare the gates <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

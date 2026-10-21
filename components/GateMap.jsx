@@ -21,7 +21,7 @@ export const GATES_DATA = {
     n: 2,
     name: 'Delawadi Gate',
     tag: 'Online + gate booking',
-    desc: 'The western gate in Sehore district, reached from Bhopal via Kolar Road. Gateway to quieter teak valleys and the walk to Ginnorgarh Fort.',
+    desc: 'The western gate in Sehore district, about 52 km from Bhopal railway station. Gateway to quieter teak valleys and the walk to Ginnorgarh Fort.',
     specs: [
       ['From Bhopal railway station', '52 km'],
       ['Online full vehicles / round', '1'],
@@ -107,8 +107,6 @@ export default function GateMap() {
             {/* roads */}
             <path d="M120 50L300 160L330 246L420 440" fill="none" stroke="#E9E2D3" strokeOpacity="0.5" strokeDasharray="5 3" strokeWidth="2.5" />
             <text x="390" y="430" fill="#E9E2D3" fillOpacity="0.7" fontSize="10" fontFamily="var(--font-label)">NH-46 → NARMADAPURAM</text>
-            <path d="M120 50L105 150L178 300" fill="none" stroke="#E9E2D3" strokeOpacity="0.4" strokeDasharray="5 3" strokeWidth="2" />
-            <text x="18" y="130" fill="#E9E2D3" fillOpacity="0.7" fontSize="10" fontFamily="var(--font-label)">KOLAR ROAD</text>
             {/* towns */}
             <circle cx="120" cy="50" r="7" fill="#F2EADB" />
             <text x="134" y="46" fill="#F2EADB" fontSize="13" fontWeight="600" fontFamily="var(--font-label)">BHOPAL</text>

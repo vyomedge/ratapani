@@ -380,7 +380,7 @@ export default function SanctuaryPage() {
             cards={[
               { href: PAGES.history.path, image: 'ginnorgarh-fort-jungle-walls', tag: 'History', title: 'History of Ratapani', text: 'Gond forts, Bhopal State forests and the road from 1976 sanctuary to tiger reserve.' },
               { href: PAGES.gates.path, image: 'safari-gypsy-teak-forest-road', tag: 'Safari entry', title: 'Ratapani Safari Gates', text: 'Jhiri, Delawadi and Bhimbetka gates: distance, booking and terrain.' },
-              { href: `${PAGES.history.path}#prehistory`, image: 'bhimbetka-rock-shelters-unesco', tag: 'UNESCO heritage', title: 'Bhimbetka Rock Shelters', text: 'The prehistoric painted shelters inside the Ratapani forest.' },
+              { href: PAGES.bhimbetka.path, image: 'bhimbetka-rock-shelters-unesco', tag: 'UNESCO heritage', title: 'Bhimbetka Rock Shelters', text: 'The prehistoric painted shelters inside the Ratapani forest.' },
             ]}
           />
 

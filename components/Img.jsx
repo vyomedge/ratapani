@@ -17,7 +17,7 @@ export default function Img({ name, sizes = '100vw', priority = false, className
       sizes={sizes}
       priority={priority}
       fetchPriority={priority ? 'high' : undefined}
-      quality={priority ? 62 : 70}
+      quality={priority ? 78 : 82}
       className={`object-cover ${className}`}
       style={position ? { objectPosition: position } : undefined}
     />

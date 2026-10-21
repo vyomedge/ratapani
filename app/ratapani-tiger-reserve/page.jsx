@@ -1,8 +1,8 @@
 import { Mountain, PawPrint, ShieldCheck, Hourglass, Landmark, Layers, Building2, Camera, Smartphone, ScanSearch, TrainFront, Home, Wheat, Fence, Check, Star, MapPin } from 'lucide-react';
 import Img from '@/components/Img';
 import JsonLd from '@/components/JsonLd';
-import { PageHero, KeyTakeaways, Faq, CtaBand, SectionHeading, TableWrap, Sources, RelatedCards } from '@/components/ui';
-import { PAGES } from '@/lib/site';
+import { PageHero, KeyTakeaways, Faq, CtaBand, SectionHeading, TableWrap, Sources, RelatedCards, FurtherReading } from '@/components/ui';
+import { PAGES, FURTHER_READING } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
@@ -303,7 +303,7 @@ export default function TigerReservePage() {
               </ol>
             </div>
             <div className="reveal relative min-h-[420px] overflow-hidden rounded-card bg-forest shadow-lg">
-              <Img name="central-india-tiger-corridor-map" sizes="(min-width: 1024px) 50vw, 100vw" />
+              <Img name="ratapani-vintage-field-map" sizes="(min-width: 1024px) 50vw, 100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               <div className="absolute inset-x-5 bottom-5 rounded-xl bg-forest-deep/90 p-4 text-white backdrop-blur-md">
                 <p className="flex items-center gap-2 font-label text-label-sm uppercase text-amber">
@@ -380,6 +380,14 @@ export default function TigerReservePage() {
               </tbody>
             </TableWrap>
           </section>
+
+          <FurtherReading
+            title="Further reading"
+            links={[
+              { href: FURTHER_READING.tigerReserve, label: 'Ratapani Tiger Reserve: an unexplored destination where wildlife meets history', text: 'A traveller’s guide to Ratapani’s safaris, Ginnorgarh, Saru Maru and Bhimbetka.' },
+              { href: FURTHER_READING.ginnorgarh, label: 'Ginnorgarh Fort: the forgotten Gond citadel inside the reserve' },
+            ]}
+          />
 
           <div className="mx-auto max-w-4xl">
             <Faq faqs={FAQS} title="Ratapani Tiger Reserve: FAQs" eyebrow="Field inquiry guide" />

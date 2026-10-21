@@ -327,8 +327,8 @@ export default function HistoryPage() {
             <RelatedCards
               cards={[
                 { href: PAGES.tigerReserve.path, image: 'tiger-on-sandstone-rock', tag: 'Tiger reserve', title: 'Ratapani Tiger Reserve', text: 'Core and buffer zones, tiger numbers, corridors and conservation challenges.' },
-                { href: PAGES.sanctuary.path, image: 'paradise-flycatcher-palash', tag: 'Biodiversity', title: 'Ratapani Wildlife Sanctuary', text: 'Teak and bamboo forests, 249 bird species, reservoirs and sanctuary rules.' },
-                { href: PAGES.gates.path, image: 'bhimbetka-rock-shelter-interior', tag: 'Plan your visit', title: 'Ratapani Safari Gates', text: 'Jhiri, Delawadi and the Bhimbetka gate, compared side by side.' },
+                { href: PAGES.ginnorgarh.path, image: 'ginnorgarh-fort-jungle-walls', tag: 'Gond heritage', title: 'Ginnorgarh Fort', text: 'Rani Kamlapati’s hill fort, its history and how to visit.' },
+                { href: PAGES.bhimbetka.path, image: 'bhimbetka-rock-shelter-interior', tag: 'UNESCO heritage', title: 'Bhimbetka Rock Shelters', text: 'Painted shelters, periods of rock art, timings and visitor tips.' },
               ]}
             />
 

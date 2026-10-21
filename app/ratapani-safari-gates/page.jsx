@@ -53,10 +53,10 @@ const GATES = [
     title: 'Delawadi Gate',
     hindi: 'देलावाड़ी गेट',
     summary:
-      'The western entry in Sehore district, reached from Bhopal via Kolar Road. Delawadi leads into teak valleys and sandstone ridges, with fewer vehicles and the lowest vehicle fee. It is also the starting point for the walk up to the ruins of Ginnorgarh Fort and old temples nearby.',
+      'The western entry in Sehore district, about 52 km from Bhopal railway station. Delawadi leads into teak valleys and sandstone ridges, with fewer vehicles and the lowest vehicle fee. It is also the starting point for the walk up to the ruins of Ginnorgarh Fort and old temples nearby.',
     specs: [
       [MapPin, 'From Bhopal', '52 km from railway station · 64 km from airport'],
-      [Navigation, 'Access road', 'Via Kolar Road (Sehore district)'],
+      [Navigation, 'Location', 'Sehore district, western side of the reserve'],
       [Ticket, 'Online quota per round', '1 full vehicle (+ DFO & gate quota)'],
       [Car, 'Vehicles', 'Registered safari vehicles only'],
     ],
@@ -134,7 +134,7 @@ export default function GatesPage() {
             title="Ratapani gates in 30 seconds"
             items={[
               { icon: MapPin, title: 'Jhiri: closest to Bhopal', text: '34 km from Bhopal railway station; the largest online quota; ₹4,230 per full vehicle.' },
-              { icon: Compass, title: 'Delawadi: the quiet west', text: '52 km via Kolar Road; lowest vehicle fee (₹3,830 per full vehicle); walk to Ginnorgarh Fort.' },
+              { icon: Compass, title: 'Delawadi: the quiet west', text: '52 km from Bhopal; lowest vehicle fee (₹3,830 per full vehicle); walk to Ginnorgarh Fort.' },
               { icon: Landmark, title: 'Bhimbetka: heritage gate', text: '44 km on NH-46, next to the UNESCO rock shelters; offline booking and private vehicles allowed.' },
               { icon: AlertTriangle, title: 'Permits are gate-specific', text: 'Each permit is for one gate, date and round. Book the right gate; permits are not transferable.' },
             ]}
