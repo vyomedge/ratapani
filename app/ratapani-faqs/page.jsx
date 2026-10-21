@@ -8,12 +8,12 @@ import { PAGES } from '@/lib/site';
 import { pageMetadata, webPageSchema, faqSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani FAQs: 43 Answers on Safari, Timings, Travel & Rules',
+  title: 'Ratapani FAQs: Safari, Timings, Fees & Travel Questions',
   description:
-    'Everything you need to know about Ratapani Tiger Reserve: safari booking, fees, gates, timings, best season, wildlife, how to reach from Bhopal, Bhimbetka and park rules.',
+    'Ratapani FAQs: 43 answers on Ratapani tiger safari booking, fees, gates, timings, best season, wildlife, how to reach and park rules.',
   path: PAGES.faqs.path,
   image: 'bhimbetka-sandstone-towers-sunset',
-  keywords: ['Ratapani FAQ', 'Ratapani questions', 'Ratapani safari FAQ', 'Ratapani tiger reserve FAQ', 'Ratapani travel guide'],
+  keywords: ['Ratapani FAQ', 'Ratapani questions', 'Ratapani safari FAQ'],
 };
 export const metadata = pageMetadata(META);
 
@@ -23,7 +23,7 @@ const GROUPS = [
   {
     id: 'general',
     kicker: 'Overview',
-    title: 'General & Sanctuary',
+    title: 'Ratapani General FAQs',
     faqs: [
       { q: 'Where is Ratapani Tiger Reserve located?', a: 'Ratapani is in Raisen and Sehore districts of Madhya Pradesh, on the southern edge of the Vindhya range just south-east of Bhopal. Its safari gates are 34–52 km from Bhopal railway station.', tags: 'location bhopal raisen sehore' },
       { q: 'Is Ratapani an official tiger reserve?', a: 'Yes. Ratapani, a wildlife sanctuary since 1976, was notified as a tiger reserve on 2 December 2024. It is Madhya Pradesh’s 8th and India’s 57th tiger reserve.', tags: 'ntca notification status' },
@@ -37,7 +37,7 @@ const GROUPS = [
   {
     id: 'safari',
     kicker: 'Expeditions',
-    title: 'Safari & Booking',
+    title: 'Ratapani Safari Booking FAQs',
     faqs: [
       { q: 'How do I book a Ratapani safari?', a: 'Book online on the MP Forest Department portal, forest.mponline.gov.in, for Jhiri or Delawadi gate. Choose the date, morning or evening round and a full vehicle or single seat, add visitor ID details and pay online.', tags: 'permit booking online mponline' },
       { q: 'How much does a Ratapani safari cost?', a: 'Per the official portal, a full vehicle costs ₹4,230 at Jhiri (₹750 entry + ₹3,000 vehicle + ₹480 guide) and ₹3,830 at Delawadi (₹750 + ₹2,600 + ₹480). A single seat is ₹125 (adult) or ₹65 (child) plus a share of the vehicle and guide fee.', tags: 'price fee cost' },
@@ -52,7 +52,7 @@ const GROUPS = [
   {
     id: 'timings',
     kicker: 'Calendar',
-    title: 'Timings & Seasons',
+    title: 'Ratapani Timings & Season FAQs',
     faqs: [
       { q: 'When is Ratapani open for safaris?', a: 'The Forest Department lists 15 October to 15 June as the best time to visit. Regular safari routes generally pause during the monsoon; check the official portal for current dates.', tags: 'season open closed monsoon' },
       { q: 'What are the Ratapani safari timings?', a: 'There are two rounds a day: a morning round starting around sunrise and an evening round ending around sunset. Exact reporting and entry times change with the season and are printed on your permit.', tags: 'timing morning evening' },
@@ -66,7 +66,7 @@ const GROUPS = [
   {
     id: 'wildlife',
     kicker: 'Fauna',
-    title: 'Wildlife & Sightings',
+    title: 'Ratapani Wildlife FAQs',
     faqs: [
       { q: 'How many tigers are there in Ratapani?', a: 'The 2022 All India Tiger Estimation recorded 56 tigers. Officials estimate over 70 from indirect evidence, and some reports put the wider landscape at close to 90.', tags: 'tiger population count' },
       { q: 'What other predators live in Ratapani?', a: 'Leopards, sloth bears, dholes (wild dogs), striped hyenas, golden jackals and foxes.', tags: 'leopard sloth bear dhole carnivores' },
@@ -80,7 +80,7 @@ const GROUPS = [
   {
     id: 'travel',
     kicker: 'Access',
-    title: 'Travel & Stay',
+    title: 'How to Reach Ratapani FAQs',
     faqs: [
       { q: 'What is the nearest airport to Ratapani?', a: 'Raja Bhoj Airport, Bhopal: about 41 km from Jhiri gate, 55 km from Bhimbetka gate and 64 km from Delawadi gate.', tags: 'airport flight bhopal' },
       { q: 'What is the nearest railway station?', a: 'Bhopal’s stations (Bhopal Junction and Rani Kamlapati), about 34 km from Jhiri gate. Narmadapuram station is about 33 km from Bhimbetka gate.', tags: 'railway train station' },
@@ -94,7 +94,7 @@ const GROUPS = [
   {
     id: 'rules',
     kicker: 'Protocol',
-    title: 'Rules & Conservation',
+    title: 'Ratapani Rules FAQs',
     faqs: [
       { q: 'Can I get out of the safari vehicle?', a: 'No, except at designated points as directed by your guide.', tags: 'step out vehicle' },
       { q: 'Is photography allowed? Are there camera fees?', a: 'Personal photography is allowed. Commercial filming needs prior permission from the Forest Department; check the portal for any current camera charges.', tags: 'camera photography fee' },
@@ -121,7 +121,7 @@ export default function FaqsPage() {
           </div>
           <p className="mb-4 font-label text-label-md uppercase text-amber">Field compendium · {ALL.length} questions answered</p>
           <h1 className="text-[2.5rem] leading-[1.05] tracking-tight text-white sm:text-[3.25rem] lg:text-display-lg">
-            Everything You Need to Know About Ratapani
+            Ratapani FAQs: Everything You Need to Know
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lg text-sand/85">
             Clear answers on safari permits, gates, timings, wildlife, Bhimbetka and travel from Bhopal, checked against official sources.
@@ -225,7 +225,7 @@ export default function FaqsPage() {
           <span className="eyebrow inline-flex items-center gap-2 text-amber">
             <Landmark className="h-4 w-4" aria-hidden /> UNESCO heritage & tiger country
           </span>
-          <h2 className="mx-auto max-w-3xl text-[2rem] leading-tight text-white md:text-display-lg">Where Ancient Artists Met the Tigers of the Vindhyas</h2>
+          <h2 className="mx-auto max-w-3xl text-[2rem] leading-tight text-white md:text-display-lg">Bhimbetka Rock Shelters & Ratapani Tigers</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sand/80">
             The painters of Bhimbetka drew the same kinds of animals that still walk Ratapani’s forests today.
           </p>

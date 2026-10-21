@@ -6,20 +6,12 @@ import { PAGES, OFFICIAL_BOOKING_URL } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Best Time to Visit Ratapani & Safari Timings (Month-wise)',
+  title: 'Best Time to Visit Ratapani & Ratapani Safari Timings',
   description:
-    'When to visit Ratapani Tiger Reserve: month-by-month weather and sighting guide, winter vs summer vs monsoon, safari season (15 Oct–15 Jun) and morning/evening timings.',
+    'Best time to visit Ratapani: month-wise weather and tiger sighting guide, safari season 15 Oct–15 Jun, monsoon closure and safari timings.',
   path: PAGES.bestTime.path,
   image: 'ratapani-teak-forest-sunrise-safari-track',
-  keywords: [
-    'best time to visit Ratapani',
-    'Ratapani safari timings',
-    'Ratapani safari season',
-    'Ratapani in summer',
-    'Ratapani in winter',
-    'Ratapani monsoon closed',
-    'Ratapani weather',
-  ],
+  keywords: ['best time to visit Ratapani', 'Ratapani safari timings', 'Ratapani safari season', 'Ratapani weather'],
 };
 export const metadata = pageMetadata(META);
 
@@ -133,7 +125,7 @@ export default function BestTimePage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Quick answer"
-            title="When should you visit Ratapani?"
+            title="Best time to visit Ratapani: quick answer"
             items={[
               { icon: Snowflake, title: 'Oct – Feb: most comfortable', text: 'Mild days, misty mornings and green forest. Best for families and first-time visitors.' },
               { icon: Sun, title: 'Mar – mid-Jun: best for tigers', text: 'Leafless forest and drying streams bring wildlife to waterholes. Hot, but the best sighting odds.' },
@@ -146,7 +138,7 @@ export default function BestTimePage() {
           <section aria-labelledby="calendar-title">
             <SectionHeading
               eyebrow="12-month guide"
-              title="Ratapani Month-by-Month: Weather & Wildlife Calendar"
+              title="Ratapani Weather & Wildlife Month by Month"
               intro="Temperatures are approximate averages for the Bhopal region (max / min). Sighting ratings are general guidance, not a guarantee."
               id="calendar-title"
             />
@@ -178,7 +170,7 @@ export default function BestTimePage() {
             <SectionHeading
               eyebrow="Season by season"
               tone="ochre"
-              title="Winter vs Summer vs Monsoon in Ratapani"
+              title="Ratapani in Winter, Summer & Monsoon"
               intro="How weather, foliage and animal behaviour change across the year."
               id="seasons-title"
             />
@@ -300,7 +292,7 @@ export default function BestTimePage() {
                 [Droplets, 'Dec – Feb', 'Condensation', 'Moving gear from a warm room into cold dawn air can fog lenses. Let the camera adjust inside its bag first.', '15-minute acclimatisation'],
                 [Camera, 'All year', 'Low light in the gorges', 'Light fades early in deep valleys. Fast lenses and higher ISO help on late-evening sightings.', 'f/2.8–f/4, 1/500 s or faster'],
               ].map(([Icon, when, t, d, rec], i) => (
-                <article key={t} className="reveal flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                <article key={t} className="reveal card-lift flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
                   <div className="mb-4 flex items-center justify-between">
                     <Icon className="h-7 w-7 text-primary" aria-hidden />
                     <span className="font-label text-label-sm uppercase text-outline">{when}</span>
@@ -344,7 +336,7 @@ export default function BestTimePage() {
 
       <CtaBand
         eyebrow="Ready for the field"
-        title="Pick Your Season, Then Pick Your Gate"
+        title="Plan Your Ratapani Safari by Season"
         text="Each gate has its own character and booking rules. Compare them before you reserve your permit."
         primary={{ href: PAGES.gates.path, label: 'Compare safari gates' }}
         secondary={{ href: PAGES.bookSafari.path, label: 'How to book' }}

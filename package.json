@@ -5,6 +5,7 @@
   "description": "Ratapani Jungle Safari: the complete guide to Ratapani Tiger Reserve, Ratapani Wildlife Sanctuary, safari booking, gates and history.",
   "scripts": {
     "images": "node scripts/fetch-images.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "dev": "next dev",
     "prebuild": "node scripts/fetch-images.mjs --if-missing",
     "build": "next build",

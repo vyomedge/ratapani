@@ -56,9 +56,11 @@ export const metadata = {
     'geo.position': `${SITE.geo.lat};${SITE.geo.lng}`,
     ICBM: `${SITE.geo.lat}, ${SITE.geo.lng}`,
   },
-  // After verifying the site in Google Search Console / Bing Webmaster Tools,
-  // paste the verification codes here:
-  // verification: { google: 'xxxx', other: { 'msvalidate.01': 'xxxx' } },
+  // Search Console / Bing verification: set these in Vercel → Settings → Environment Variables.
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION }),
+    ...(process.env.NEXT_PUBLIC_BING_VERIFICATION && { other: { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION } }),
+  },
 };
 
 export const viewport = {
@@ -74,6 +76,7 @@ export default function RootLayout({ children }) {
         <a href="#main" className="sr-only z-[60] rounded-full bg-amber px-5 py-3 font-label text-charcoal focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
           Skip to content
         </a>
+        <div className="scroll-progress" aria-hidden />
         <Header />
         <main id="main">{children}</main>
         <Footer />

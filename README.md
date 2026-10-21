@@ -97,3 +97,15 @@ To replace an image with your own photo, save it as `public/images/<same-name>.w
 - `sitemap.xml`, `robots.txt` (open to Google and AI crawlers), `llms.txt` summary for AI engines
 - Sources list and "last updated" date on every page (trust signals)
 - Self-hosted fonts, optimised AVIF/WebP images, static pages, no layout shift: Lighthouse 88–100 performance, 100 accessibility / best practices / SEO in testing
+
+### Added in the SEO + motion pass
+
+- **Social share images**: every page has its own 1200×630 JPEG (`opengraph-image.jsx` / `twitter-image.jsx`), built from the page photo.
+- **Image sitemap**: `/sitemap.xml` lists every photo used on each page, so Google Images can index them.
+- **Extra schema**: TouristDestination (home), ItemList of gates, Speakable, ImageObject.
+- **301 redirects** for common misspellings (`/bhimbetika`, `/ginnourgarh-fort`, `/ratapani-tiger-safari`, `/ratapani-gates` …) in `next.config.mjs`.
+- **HSTS** security header.
+- **Search Console / Bing verification**: in Vercel → Settings → Environment Variables add
+  `NEXT_PUBLIC_GOOGLE_VERIFICATION` and `NEXT_PUBLIC_BING_VERIFICATION` (only the code, not the whole tag), then redeploy.
+- **IndexNow** (instant indexing on Bing, Yandex and others): after each deploy run `npm run indexnow`.
+- **Animations** (all switched off for visitors who prefer reduced motion): hero entrance, scroll progress bar, reveal on scroll, image settle, card lift, button shine, eyebrow underline, walking pugmarks.

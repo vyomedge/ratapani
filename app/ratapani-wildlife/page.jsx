@@ -7,20 +7,12 @@ import { PAGES } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani Wildlife: Tigers, Leopards, Sloth Bears & 249 Birds',
+  title: 'Ratapani Wildlife: Animals & Birds of Ratapani Tiger Reserve',
   description:
-    'Wildlife of Ratapani Tiger Reserve: Bengal tigers, leopards, sloth bears, dholes, sambar, chital, nilgai and 249 bird species. Species guide, IUCN status and spotting tips.',
+    'Ratapani wildlife guide: Bengal tiger, leopard, sloth bear, dhole, sambar, chital, nilgai and 249 bird species, with IUCN status and spotting tips.',
   path: PAGES.wildlife.path,
   image: 'indian-leopard-teak-branch-ratapani',
-  keywords: [
-    'Ratapani wildlife',
-    'animals in Ratapani',
-    'Ratapani tiger reserve animals',
-    'Ratapani birds',
-    'Ratapani leopard',
-    'Ratapani sloth bear',
-    'wildlife near Bhopal',
-  ],
+  keywords: ['Ratapani wildlife', 'animals in Ratapani', 'Ratapani birds', 'Ratapani leopard', 'Ratapani sloth bear'],
 };
 export const metadata = pageMetadata(META);
 
@@ -84,7 +76,7 @@ export default function WildlifePage() {
       <PageHero
         image={META.image}
         eyebrow="Biodiversity dossier · Central Indian ecosystem"
-        title="Wildlife of Ratapani Tiger Reserve"
+        title="Ratapani Wildlife: Animals & Birds of Ratapani Tiger Reserve"
         intro="Tigers in the teak valleys, leopards on the sandstone ridges, sloth bears in the bamboo and 249 kinds of birds: a field guide to the animals of Ratapani and how to spot them."
         crumbs={CRUMBS}
         badges={[
@@ -119,7 +111,7 @@ export default function WildlifePage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Wildlife dossier"
-            title="How Ratapani’s wildlife fits together"
+            title="Ratapani wildlife at a glance"
             items={[
               { icon: Users, title: 'Two big cats, one forest', text: 'Tigers hold the valleys and water; leopards keep to rocky ridges, cliffs and trees.' },
               { icon: PawPrint, title: 'Sloth bears and wild dogs', text: 'Bamboo slopes and mahua groves suit sloth bears; dholes roam the quieter forest.' },
@@ -131,7 +123,7 @@ export default function WildlifePage() {
           <section aria-labelledby="species-title">
             <SectionHeading
               eyebrow="Species field guide"
-              title="12 Animals of Ratapani: Species Guide"
+              title="Animals in Ratapani: 12-Species Guide"
               intro="Conservation status is from the IUCN Red List. Sighting chance is general guidance for a typical safari, not a guarantee."
               id="species-title"
             />
@@ -239,7 +231,7 @@ export default function WildlifePage() {
 
       <CtaBand
         eyebrow="Into the field"
-        title="Ready to Track the Wildlife of the Vindhyas?"
+        title="See Ratapani Wildlife on a Tiger Safari"
         text="Pick your gate and season, then book a morning round for the best chance of sightings."
         primary={{ href: PAGES.gates.path, label: 'Explore safari gates' }}
         secondary={{ href: PAGES.bestTime.path, label: 'Seasonal sighting calendar' }}

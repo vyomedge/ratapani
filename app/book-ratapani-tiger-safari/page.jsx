@@ -32,21 +32,12 @@ import { PAGES, OFFICIAL_BOOKING_URL } from '@/lib/site';
 import { pageMetadata, webPageSchema, howToSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani Safari Booking 2026: Online Steps, Fees & Timings',
+  title: 'Ratapani Tiger Safari Booking: Price, Timings & Steps',
   description:
-    'How to book a Ratapani tiger safari online: official portal steps, Jhiri & Delawadi fees (₹3,830–₹4,230 per vehicle), timings, documents and tips.',
+    'Ratapani tiger safari booking online: Jhiri and Delawadi safari price (₹3,830–₹4,230 per vehicle), timings, single seat booking and documents.',
   path: PAGES.bookSafari.path,
   image: 'ratapani-tiger-safari-jeep-tiger-crossing',
-  keywords: [
-    'Ratapani safari booking',
-    'Ratapani tiger safari booking',
-    'Ratapani jungle safari online booking',
-    'Ratapani safari price',
-    'Ratapani safari fees',
-    'Ratapani safari timings',
-    'Ratapani jungle safari cost',
-    'forest.mponline.gov.in Ratapani',
-  ],
+  keywords: ['Ratapani tiger safari', 'Ratapani safari booking', 'Ratapani jungle safari booking', 'Ratapani safari price', 'Ratapani safari online booking'],
 };
 export const metadata = pageMetadata(META);
 
@@ -109,7 +100,7 @@ export default function BookSafariPage() {
       <PageHero
         image={META.image}
         eyebrow="Permit guide · Official MP Forest portal"
-        title="Book Ratapani Tiger Safari"
+        title="Ratapani Tiger Safari Booking"
         intro="A clear, step-by-step guide to booking a Ratapani jungle safari: the official online portal, gate quotas, full-vehicle and single-seat fees, timings, documents and tips to make your permit count."
         crumbs={CRUMBS}
         badges={[
@@ -136,7 +127,7 @@ export default function BookSafariPage() {
           <section aria-labelledby="steps-title">
             <SectionHeading
               eyebrow="Step-by-step"
-              title="How to Book a Ratapani Safari Online in 5 Steps"
+              title="Ratapani Safari Online Booking in 5 Steps"
               intro="Follow these steps on the Madhya Pradesh Forest Department’s official booking portal."
               id="steps-title"
             />
@@ -165,7 +156,7 @@ export default function BookSafariPage() {
           <section aria-labelledby="types-title">
             <SectionHeading
               eyebrow="Safari types"
-              title="Ratapani Safari Options"
+              title="Ratapani Tiger Safari Types"
               intro="Choose how you want to ride: a whole vehicle for your group, a single seat in a shared vehicle, or the Bhimbetka gate route."
               id="types-title"
               tone="moss"
@@ -197,7 +188,7 @@ export default function BookSafariPage() {
                   points: ['No online booking', 'Private vehicles allowed', 'Combine with Bhimbetka caves'],
                 },
               ].map((t, i) => (
-                <article key={t.title} className="reveal flex flex-col overflow-hidden rounded-card bg-white shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
+                <article key={t.title} className="reveal card-lift flex flex-col overflow-hidden rounded-card bg-white shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
                   <div className="relative h-56 bg-forest">
                     <Img name={t.image} sizes="(min-width: 768px) 33vw, 100vw" />
                     <span className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 font-label text-label-sm uppercase text-white backdrop-blur-md">{t.tag}</span>
@@ -279,7 +270,7 @@ export default function BookSafariPage() {
                 { icon: Sun, season: 'Summer', months: 'March to mid-June', am: 'From about 5:30–6:00 am', pm: 'Until about sunset (~6:30 pm)', note: 'Best season for sightings near water; mornings are cooler.' },
                 { icon: CloudRain, season: 'Monsoon', months: 'Mid-June to mid-October', am: 'Check portal', pm: 'Check portal', note: 'The listed safari season is 15 Oct–15 Jun; routes may close for the rains.' },
               ].map((t, i) => (
-                <article key={t.season} className="reveal rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
+                <article key={t.season} className="reveal card-lift rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
                   <div className="mb-4 flex items-center gap-3">
                     <span className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary-soft text-secondary">
                       <t.icon className="h-5 w-5" aria-hidden />
@@ -330,7 +321,7 @@ export default function BookSafariPage() {
               },
               {
                 eyebrow: 'What to carry',
-                title: 'What to Wear and Carry on Safari',
+                title: 'What to Wear on a Ratapani Safari',
                 text: 'Open safari vehicles are cold at dawn in winter and hot by noon in summer. Dress in layers.',
                 items: [
                   [Shirt, 'Muted clothes', 'Khaki, olive, brown or grey. Avoid white, neon and loud colours.'],
@@ -366,7 +357,7 @@ export default function BookSafariPage() {
               <Lightbulb className="h-5 w-5" aria-hidden /> Insider tips
             </p>
             <h2 id="tips-title" className="mb-6 text-headline-sm text-ink md:text-headline-md">
-              Book Early for Weekends and Holidays
+              Ratapani Safari Booking Tips
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {[
@@ -384,7 +375,7 @@ export default function BookSafariPage() {
 
           {/* Etiquette */}
           <section aria-labelledby="etiquette-title">
-            <SectionHeading eyebrow="Safari etiquette" title="Safari Etiquette in Ratapani" intro="Ratapani is a wild forest, not a zoo. These habits protect animals and make better sightings for everyone." id="etiquette-title" tone="ochre" />
+            <SectionHeading eyebrow="Safari etiquette" title="Ratapani Safari Rules & Etiquette" intro="Ratapani is a wild forest, not a zoo. These habits protect animals and make better sightings for everyone." id="etiquette-title" tone="ochre" />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 [VolumeX, 'Silence at sightings', 'When your guide hears an alarm call, go quiet. Whispering keeps animals on their natural path.'],
@@ -392,7 +383,7 @@ export default function BookSafariPage() {
                 [Ruler, 'Give space', 'Do not crowd, chase or block an animal’s path. Let it cross on its own terms.'],
                 [Trash2, 'Leave no trace', 'No littering and no feeding wildlife, not even monkeys.'],
               ].map(([Icon, t, d], i) => (
-                <article key={t} className="reveal rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                <article key={t} className="reveal card-lift rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
                   <Icon className="mb-4 h-7 w-7 text-tertiary" aria-hidden />
                   <h3 className="mb-2 text-xl text-ink">{t}</h3>
                   <p className="text-sm leading-relaxed text-ink-soft">{d}</p>
@@ -421,7 +412,7 @@ export default function BookSafariPage() {
         </div>
         <div className="container-site relative z-10 text-center">
           <span className="eyebrow text-amber">Next chapter</span>
-          <h2 className="reveal mx-auto max-w-3xl text-[2rem] leading-tight text-white md:text-display-lg">Know Your Gates Before You Book</h2>
+          <h2 className="reveal mx-auto max-w-3xl text-[2rem] leading-tight text-white md:text-display-lg">Ratapani Safari Gates: Choose Before You Book</h2>
           <p className="reveal mx-auto mt-4 max-w-2xl text-lg text-sand/80">
             Jhiri, Delawadi or Bhimbetka? Compare distance from Bhopal, booking type, terrain and who each gate suits best.
           </p>

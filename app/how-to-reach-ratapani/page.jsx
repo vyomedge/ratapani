@@ -8,20 +8,12 @@ import { PAGES } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'How to Reach Ratapani: By Air, Train & Road from Bhopal',
+  title: 'How to Reach Ratapani from Bhopal: Road, Train & Air',
   description:
-    'How to reach Ratapani Tiger Reserve: nearest airport (Bhopal, 41 km), railway stations, NH-46 road route, gate-wise distances, taxis and a Bhopal–Bhimbetka–Bhojpur road trip.',
+    'How to reach Ratapani: nearest airport Bhopal (41 km), nearest railway station, NH-46 route and gate-wise distance from Bhopal, Indore and Jabalpur.',
   path: PAGES.reach.path,
   image: 'ratapani-forest-highway-road-trip',
-  keywords: [
-    'how to reach Ratapani',
-    'Ratapani distance from Bhopal',
-    'nearest airport to Ratapani',
-    'nearest railway station to Ratapani',
-    'Bhopal to Ratapani',
-    'Bhopal to Bhimbetka distance',
-    'Ratapani by road',
-  ],
+  keywords: ['how to reach Ratapani', 'Ratapani distance from Bhopal', 'Bhopal to Ratapani', 'nearest railway station to Ratapani', 'nearest airport to Ratapani'],
 };
 export const metadata = pageMetadata(META);
 
@@ -118,7 +110,7 @@ export default function ReachPage() {
       <PageHero
         image={META.image}
         eyebrow="Getting there · Air, rail & road"
-        title="How to Reach Ratapani"
+        title="How to Reach Ratapani Tiger Reserve"
         intro="Ratapani is one of India’s most accessible tiger reserves, just 34–52 km from Bhopal. Here is how to get there by air, train and road, with gate-by-gate directions and local travel tips."
         crumbs={CRUMBS}
         badges={[
@@ -132,7 +124,7 @@ export default function ReachPage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Transit dossier"
-            title="Reaching Ratapani in brief"
+            title="How to reach Ratapani: quick answer"
             items={[
               { icon: MapPin, title: 'Bhopal is the gateway', text: 'All three safari gates are 34–52 km from Bhopal railway station.' },
               { icon: Navigation, title: 'NH-46 is the main road', text: 'The Bhopal–Narmadapuram highway passes Obaidullaganj, Jhiri and Bhimbetka.' },
@@ -142,10 +134,10 @@ export default function ReachPage() {
           />
 
           <section aria-labelledby="modes-title">
-            <SectionHeading eyebrow="Travel options" title="Reaching Ratapani by Air, Train and Road" id="modes-title" />
+            <SectionHeading eyebrow="Travel options" title="How to Reach Ratapani by Air, Train and Road" id="modes-title" />
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               {MODES.map((m, i) => (
-                <article key={m.title} className="reveal flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
+                <article key={m.title} className="reveal card-lift flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
                   <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-fixed text-primary">
                     <m.icon className="h-6 w-6" aria-hidden />
                   </span>
@@ -177,12 +169,12 @@ export default function ReachPage() {
             <div className="lg:col-span-7">
               <SectionHeading
                 eyebrow="Gate directions"
-                title="Directions from Bhopal to Each Safari Gate"
+                title="Bhopal to Ratapani: Directions to Each Gate"
                 intro="Your permit names the gate you must report to. Choose it below for directions."
                 id="routes-title"
                 tone="moss"
               />
-              <div className="reveal rounded-card bg-white p-6 shadow-md">
+              <div className="reveal card-lift rounded-card bg-white p-6 shadow-md">
                 <Tabs label="routes" tabs={ROUTES.map((r) => ({ label: r.label, sub: r.sub }))}>
                   {ROUTES.map((r) => (
                     <div key={r.title}>
@@ -253,7 +245,7 @@ export default function ReachPage() {
           </section>
 
           <section aria-labelledby="local-title">
-            <SectionHeading eyebrow="On the ground" title="Local Transport Tips" id="local-title" tone="ochre" />
+            <SectionHeading eyebrow="On the ground" title="Ratapani Local Transport Tips" id="local-title" tone="ochre" />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 [CarTaxiFront, 'Book a round-trip taxi', 'App cabs can drop you at the gate, but return cabs are scarce. A round-trip taxi from Bhopal is the easiest option.'],
@@ -261,7 +253,7 @@ export default function ReachPage() {
                 [Fuel, 'Fuel up early', 'Fill your tank on NH-46 before turning off towards the forest; pumps are scarce near the gates.'],
                 [WifiOff, 'Offline maps', 'Mobile signal drops near the gates. Download offline maps of Bhopal, Raisen and Sehore districts.'],
               ].map(([Icon, t, d], i) => (
-                <article key={t} className="reveal rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                <article key={t} className="reveal card-lift rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
                   <Icon className="mb-4 h-7 w-7 text-primary" aria-hidden />
                   <h3 className="mb-2 text-xl text-ink">{t}</h3>
                   <p className="text-sm leading-relaxed text-ink-soft">{d}</p>
@@ -273,7 +265,7 @@ export default function ReachPage() {
           <section aria-labelledby="circuit-title" className="reveal overflow-hidden rounded-[1.75rem] bg-forest bg-contour-light p-8 text-sand md:p-12">
             <span className="eyebrow text-amber">Road-trip idea</span>
             <h2 id="circuit-title" className="mb-4 max-w-3xl text-[2rem] leading-tight text-white md:text-headline-lg">
-              The Vindhyan Heritage Loop: Bhopal · Bhimbetka · Ratapani · Bhojpur
+              Bhopal to Ratapani Road Trip: Bhimbetka & Bhojpur Loop
             </h2>
             <p className="mb-8 max-w-3xl text-sand/80">
               One day, prehistoric art, a tiger safari and an 11th-century temple, all within roughly 150 km of driving from Bhopal.
@@ -318,7 +310,7 @@ export default function ReachPage() {
 
       <CtaBand
         eyebrow="Next step"
-        title="Ready to Book Your Safari Permit?"
+        title="Book Your Ratapani Safari Permit"
         text="You know the way. Now choose a gate and book your permit on the official portal."
         primary={{ href: PAGES.bookSafari.path, label: 'Book Ratapani safari' }}
         secondary={{ href: PAGES.gates.path, label: 'Compare gates' }}

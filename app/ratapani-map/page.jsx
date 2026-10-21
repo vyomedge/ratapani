@@ -8,20 +8,12 @@ import { PAGES, SITE } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani Map: Core & Buffer Zones, Gates and Distances',
+  title: 'Ratapani Map: Tiger Reserve Zones, Gates & Location',
   description:
-    'Interactive Ratapani Tiger Reserve map: 763.8 km² core, 507.7 km² buffer, Jhiri, Delawadi and Bhimbetka gates, reservoirs, Bhimbetka and distances from Bhopal.',
+    'Ratapani map: interactive map of Ratapani Tiger Reserve core and buffer zones, Jhiri, Delawadi and Bhimbetka gates, reservoirs and Bhopal distances.',
   path: PAGES.map.path,
   image: 'ratapani-parchment-map',
-  keywords: [
-    'Ratapani map',
-    'Ratapani tiger reserve map',
-    'Ratapani zones',
-    'Ratapani core zone buffer zone',
-    'Ratapani location',
-    'where is Ratapani',
-    'Ratapani distance from Bhopal',
-  ],
+  keywords: ['Ratapani map', 'Ratapani tiger reserve map', 'Ratapani location', 'Ratapani zones'],
 };
 export const metadata = pageMetadata(META);
 
@@ -106,7 +98,7 @@ export default function MapPage() {
               <Compass className="h-4 w-4 text-amber" aria-hidden />
               <span className="font-label text-label-md uppercase text-primary-fixed">Field atlas · MP Forest Department data</span>
             </p>
-            <h1 className="text-[2.6rem] leading-[1.05] tracking-tight text-white sm:text-[3.25rem] lg:text-display-lg">Ratapani Map &amp; Zones</h1>
+            <h1 className="text-[2.6rem] leading-[1.05] tracking-tight text-white sm:text-[3.25rem] lg:text-display-lg">Ratapani Map: Tiger Reserve Zones &amp; Gates</h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-sand/85">
               Where Ratapani is, how its 1,271.5 km² divide into core and buffer, where the three safari gates sit, and how far everything is from
               Bhopal.
@@ -141,7 +133,7 @@ export default function MapPage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Map highlights"
-            title="Ratapani geography at a glance"
+            title="Ratapani location at a glance"
             items={[
               { icon: Layers, title: '60% core, 40% buffer', text: 'A 763.8 km² core for wildlife, ringed by a 507.7 km² buffer where villages and livelihoods continue.' },
               { icon: Landmark, title: 'Bhimbetka inside the forest', text: 'The UNESCO rock shelters sit within Ratapani, about 45 km south-east of Bhopal on NH-46.' },
@@ -153,7 +145,7 @@ export default function MapPage() {
           <section aria-labelledby="atlas-heading">
             <SectionHeading
               eyebrow="Interactive map"
-              title="Explore the Ratapani Tiger Reserve Map"
+              title="Interactive Ratapani Tiger Reserve Map"
               intro="Switch layers on and off and tap any zone, gate, reservoir or landmark for details."
               id="atlas-heading"
             />
@@ -172,7 +164,7 @@ export default function MapPage() {
             />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {SECTORS.map((s, i) => (
-                <article key={s.title} className="reveal flex flex-col overflow-hidden rounded-card bg-white shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
+                <article key={s.title} className="reveal card-lift flex flex-col overflow-hidden rounded-card bg-white shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
                   <div className="relative h-56 bg-forest">
                     <Img name={s.image} sizes="(min-width: 768px) 33vw, 100vw" />
                     <span className="absolute left-3 top-3 rounded-full bg-amber px-3 py-1 font-label text-label-sm uppercase text-charcoal">{s.code}</span>
@@ -249,7 +241,7 @@ export default function MapPage() {
 
       <CtaBand
         eyebrow="Plan by sector & season"
-        title="Know the Map, Now Plan the Safari"
+        title="Plan Your Ratapani Safari by Zone"
         text="Choose your gate, then your season. Both decide what you will see."
         primary={{ href: PAGES.gates.path, label: 'Explore safari gates' }}
         secondary={{ href: PAGES.bestTime.path, label: 'Best time & timings' }}

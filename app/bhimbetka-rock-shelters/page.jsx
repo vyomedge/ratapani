@@ -32,21 +32,12 @@ import { PAGES, FURTHER_READING, absoluteUrl } from '@/lib/site';
 import { pageMetadata, webPageSchema, placeId } from '@/lib/seo';
 
 const META = {
-  title: 'Bhimbetka Rock Shelters: History, Paintings, Timings & Guide',
+  title: 'Bhimbetka Rock Shelters (Bhimbetika Caves): Timings & Guide',
   description:
-    'Bhimbetka rock shelters, UNESCO site inside Ratapani near Bhopal: 750+ shelters, 10,000+ year-old paintings, Zoo Rock, Auditorium Cave, timings, entry and how to visit.',
+    'Bhimbetka rock shelters (Bhimbetika caves), UNESCO site 45 km from Bhopal: 750+ shelters, prehistoric paintings, timings, entry fee and how to reach.',
   path: PAGES.bhimbetka.path,
   image: 'bhimbetka-boar-rock-painting',
-  keywords: [
-    'Bhimbetka rock shelters',
-    'Bhimbetka caves',
-    'Bhimbetka paintings',
-    'Bhimbetka UNESCO',
-    'Bhimbetka timings',
-    'Bhimbetka entry fee',
-    'Bhimbetka distance from Bhopal',
-    'Bhimbetika',
-  ],
+  keywords: ['Bhimbetka rock shelters', 'Bhimbetka caves', 'Bhimbetika', 'Bhimbetka paintings', 'Bhimbetka timings', 'Bhimbetka entry fee'],
 };
 export const metadata = pageMetadata(META);
 
@@ -131,7 +122,7 @@ export default function BhimbetkaPage() {
       <PageHero
         image={META.image}
         eyebrow="UNESCO World Heritage Site · Criteria (iii) & (v)"
-        title="Bhimbetka Rock Shelters: The 100,000-Year Canvas"
+        title="Bhimbetka Rock Shelters (Bhimbetika Caves)"
         intro="Inside the teak forests of Ratapani lies one of the world’s longest records of human life: more than 750 sandstone shelters where people lived for over 100,000 years and painted hunters, dancers and animals on the rock."
         crumbs={CRUMBS}
         badges={[
@@ -165,7 +156,7 @@ export default function BhimbetkaPage() {
         <div className="container-site space-y-24">
           {/* Tenets */}
           <section aria-labelledby="tenets-title">
-            <SectionHeading eyebrow="Prehistoric dossier" title="Why Bhimbetka Matters" id="tenets-title" tone="ochre" />
+            <SectionHeading eyebrow="Prehistoric dossier" title="Why Bhimbetka Rock Shelters Matter" id="tenets-title" tone="ochre" />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 [Palette, 'A cradle of human creativity', 'Paintings span the Palaeolithic, Mesolithic, Chalcolithic, early historic and medieval periods, mostly in red and white natural pigments.', 'Thousands of years of art'],
@@ -173,7 +164,7 @@ export default function BhimbetkaPage() {
                 [TrainFront, 'A rediscovery from a train', 'In 1957 archaeologist V. S. Wakankar noticed the rock formations from a train window and set out to explore them.', 'Rediscovered 1957'],
                 [Users, 'A living tradition', 'UNESCO notes that traditions in nearby villages echo themes seen in the paintings, linking past and present.', 'Cultural continuity'],
               ].map(([Icon, t, d, tag], i) => (
-                <article key={t} className="reveal flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                <article key={t} className="reveal card-lift flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
                   <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-tertiary-fixed text-tertiary">
                     <Icon className="h-6 w-6" aria-hidden />
                   </span>
@@ -192,7 +183,7 @@ export default function BhimbetkaPage() {
                 <ShieldCheck className="h-4 w-4" aria-hidden /> World Heritage list · Ref. 925
               </p>
               <h2 id="unesco-title" className="mb-4 text-[2rem] leading-tight text-white md:text-headline-lg">
-                UNESCO Inscription: Criteria (iii) &amp; (v)
+                Bhimbetka UNESCO World Heritage Site: Criteria (iii) &amp; (v)
               </h2>
               <p className="mb-6 leading-relaxed text-sand/80">
                 The Rock Shelters of Bhimbetka were inscribed in 2003 for their long, continuous record of human life and the close interaction
@@ -231,7 +222,7 @@ export default function BhimbetkaPage() {
 
           {/* At a glance */}
           <section aria-labelledby="glance-title">
-            <SectionHeading eyebrow="Field metrics" title="Bhimbetka at a Glance" id="glance-title" />
+            <SectionHeading eyebrow="Field metrics" title="Bhimbetka Caves at a Glance" id="glance-title" />
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 [Hourglass, 'Age', '100,000+ years', 'Human presence from the Stone Age (Acheulean) to around the 2nd century BCE; painting into the medieval era.'],
@@ -256,7 +247,7 @@ export default function BhimbetkaPage() {
           {/* Discovery */}
           <section aria-labelledby="discovery-title" className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <SectionHeading eyebrow="Discovery" tone="ochre" title="From a Train Window to World Heritage" id="discovery-title" />
+              <SectionHeading eyebrow="Discovery" tone="ochre" title="History of Bhimbetka: Discovery to World Heritage" id="discovery-title" />
               <div className="prose-rp reveal text-lg">
                 <p>
                   In 1957 the archaeologist <strong>Vishnu Shridhar Wakankar</strong> was travelling by train through the Vindhya hills south of Bhopal
@@ -292,7 +283,7 @@ export default function BhimbetkaPage() {
           <section aria-labelledby="gallery-title">
             <SectionHeading
               eyebrow="Prehistoric masterpieces"
-              title="Gallery of the Ancient Artists"
+              title="Bhimbetka Rock Paintings Gallery"
               intro="Tap any image to enlarge it and read more about what it shows."
               id="gallery-title"
             />
@@ -352,7 +343,7 @@ export default function BhimbetkaPage() {
             <div>
               <SectionHeading
                 eyebrow="Where prehistory meets the tiger"
-                title="The Living Wilderness Around Bhimbetka"
+                title="Bhimbetka and Ratapani Tiger Reserve"
                 intro="The ravines and waterholes that sustained Stone Age people still sustain tigers, leopards, sloth bears and hundreds of bird species today."
                 id="living-title"
               />
@@ -376,7 +367,7 @@ export default function BhimbetkaPage() {
                 Bhimbetka safari gate <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
             </div>
-            <div className="reveal relative h-[460px] overflow-hidden rounded-card bg-forest shadow-2xl">
+            <div className="reveal reveal-scale relative h-[460px] overflow-hidden rounded-card bg-forest shadow-2xl">
               <Img name="bhimbetka-balancing-rock" sizes="(min-width: 1024px) 50vw, 100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
               <p className="absolute inset-x-5 bottom-5 flex items-center gap-2 text-sm text-white">
@@ -387,7 +378,7 @@ export default function BhimbetkaPage() {
 
           {/* Tips */}
           <section aria-labelledby="tips-title">
-            <SectionHeading eyebrow="Naturalist guidance" title="Visiting Bhimbetka: Practical Tips" id="tips-title" tone="ochre" />
+            <SectionHeading eyebrow="Naturalist guidance" title="Bhimbetka Visiting Tips" id="tips-title" tone="ochre" />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 [Sun, 'Choose your light', 'Mornings are cooler and quieter; around midday the overhangs are evenly lit and shaded.'],
@@ -395,7 +386,7 @@ export default function BhimbetkaPage() {
                 [Users, 'Hire a guide', 'Local guides at the entrance help you find and understand the paintings.'],
                 [Leaf, 'Leave no trace', 'Avoid single-use plastic, keep noise low and carry all litter back.'],
               ].map(([Icon, t, d], i) => (
-                <article key={t} className="reveal rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                <article key={t} className="reveal card-lift rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
                   <Icon className="mb-4 h-7 w-7 text-primary" aria-hidden />
                   <h3 className="mb-2 text-xl text-ink">{t}</h3>
                   <p className="text-sm leading-relaxed text-ink-soft">{d}</p>
@@ -439,7 +430,7 @@ export default function BhimbetkaPage() {
 
       <CtaBand
         eyebrow="Extend your journey"
-        title="From Prehistoric Art to Roaming Bengal Tigers"
+        title="Combine Bhimbetka with a Ratapani Tiger Safari"
         text="Plan a safari through Ratapani’s gates and explore more sights across the Vindhyan landscape."
         primary={{ href: PAGES.gates.path, label: 'Safari gates & routes' }}
         secondary={{ href: PAGES.places.path, label: 'Places to visit' }}

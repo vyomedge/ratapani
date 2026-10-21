@@ -6,19 +6,12 @@ import { PAGES } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'History of Ratapani: Bhimbetka to Tiger Reserve (1976–2024)',
+  title: 'History of Ratapani: Sanctuary to Tiger Reserve',
   description:
-    'History of Ratapani: Bhimbetka’s Stone Age shelters, Ginnorgarh Fort, the Bhopal State era, the 1976 sanctuary and the 2024 tiger reserve.',
+    'History of Ratapani: Bhimbetka’s Stone Age shelters, Ginnorgarh Fort, Bhopal State, the 1976 wildlife sanctuary and the 2024 tiger reserve.',
   path: PAGES.history.path,
   image: 'vindhya-hills-misty-sunrise-ratapani',
-  keywords: [
-    'history of Ratapani',
-    'Ratapani wildlife sanctuary history',
-    'Ratapani sanctuary established 1976',
-    'Ginnorgarh fort history',
-    'Bhimbetka history',
-    'Ratapani tiger reserve notification',
-  ],
+  keywords: ['history of Ratapani', 'Ratapani history', 'Ratapani sanctuary 1976', 'Ratapani tiger reserve notification'],
 };
 export const metadata = pageMetadata(META);
 
@@ -157,7 +150,7 @@ export default function HistoryPage() {
       <PageHero
         image={META.image}
         eyebrow="Chronicles of the Vindhyas · Stone Age to today"
-        title="History of Ratapani"
+        title="History of Ratapani: From Bhimbetka to Tiger Reserve"
         intro="From Stone Age hunters painting the walls of Bhimbetka to Gond forts, Bhopal’s princely forests and a tiger reserve notified in 2024: 100,000 years of people and wildlife in one landscape."
         crumbs={CRUMBS}
         badges={[{ icon: MapPin, text: 'Raisen & Sehore, Madhya Pradesh' }]}
@@ -177,7 +170,7 @@ export default function HistoryPage() {
           <div className="flex flex-col gap-20 lg:col-span-8">
             <div id="key-takeaways" className="scroll-mt-28">
               <KeyTakeaways
-                title="Ratapani’s history at a glance"
+                title="Ratapani history at a glance"
                 items={[
                   { icon: History, title: 'Prehistoric continuity', text: 'Bhimbetka’s 750+ rock shelters show human life from the Stone Age to the 2nd century BCE (UNESCO, 2003).' },
                   { icon: Castle, title: 'Kingdoms and forts', text: 'Raja Bhoj’s Bhojpur, Ashokan inscriptions at Saru Maru and the Gond hill fort of Ginnorgarh.' },
@@ -189,7 +182,7 @@ export default function HistoryPage() {
 
             {/* Timeline */}
             <section id="timeline" className="scroll-mt-28" aria-labelledby="timeline-title">
-              <SectionHeading eyebrow="Chronological field dossier" tone="ochre" title="Ratapani Timeline: 100,000 Years in Seven Chapters" id="timeline-title" />
+              <SectionHeading eyebrow="Chronological field dossier" tone="ochre" title="Ratapani History Timeline: 100,000 Years" id="timeline-title" />
               <ol className="relative space-y-14 pl-8 sm:pl-12">
                 <span className="absolute bottom-3 left-3 top-3 w-0.5 bg-surface-highest sm:left-4" aria-hidden />
                 {TIMELINE.map((m) => (
@@ -302,7 +295,7 @@ export default function HistoryPage() {
 
             {/* Numbers */}
             <section id="numbers" className="scroll-mt-28" aria-labelledby="numbers-title">
-              <SectionHeading eyebrow="Ecological resurgence" tone="moss" title="Ratapani’s Conservation Story in Numbers" id="numbers-title" />
+              <SectionHeading eyebrow="Ecological resurgence" tone="moss" title="Ratapani Wildlife Sanctuary to Tiger Reserve in Numbers" id="numbers-title" />
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   ['Sanctuary since', '1976', 'Year declared', 'Protected under the Wildlife (Protection) Act, 1972.', 'text-ink'],
@@ -346,7 +339,7 @@ export default function HistoryPage() {
 
       <CtaBand
         eyebrow="Witness 100,000 years in person"
-        title="Walk Among Ancient Shelters & Tiger Tracks"
+        title="Visit Ratapani: Ancient Shelters & Tiger Tracks"
         text="Morning and evening safari permits are issued by the Madhya Pradesh Forest Department. Plan your visit with our step-by-step booking guide."
         primary={{ href: PAGES.bookSafari.path, label: 'Book tiger safari' }}
         secondary={{ href: PAGES.gates.path, label: 'Safari gates' }}

@@ -37,7 +37,27 @@
     @apply mb-2 block font-label text-label-md uppercase;
   }
   .btn {
-    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-7 py-3 font-label text-label-lg uppercase transition-all duration-200 active:scale-[0.98];
+    @apply relative isolate inline-flex min-h-[48px] items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3 font-label text-label-lg uppercase transition-all duration-200 active:scale-[0.98];
+  }
+  /* Light sweep across buttons on hover + arrow nudge */
+  .btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .btn:hover::after {
+    transform: translateX(120%);
+  }
+  .btn > svg:last-child {
+    transition: transform 0.25s ease;
+  }
+  .btn:hover > svg:last-child {
+    transform: translateX(3px);
   }
   .btn-amber {
     @apply btn bg-amber text-charcoal shadow-[0_6px_20px_rgba(224,138,30,0.3)] hover:bg-amber-soft;
@@ -92,6 +112,151 @@
   transform: none;
 }
 
+/* Reveal variants: add next to "reveal" */
+.js-motion .reveal.reveal-left {
+  transform: translateX(-32px);
+}
+.js-motion .reveal.reveal-right {
+  transform: translateX(32px);
+}
+.js-motion .reveal.reveal-scale {
+  transform: scale(0.94);
+}
+.js-motion .reveal.is-visible.reveal-left,
+.js-motion .reveal.is-visible.reveal-right,
+.js-motion .reveal.is-visible.reveal-scale {
+  transform: none;
+}
+
+/* Photos inside revealed blocks settle from a slight zoom (uses the
+   independent "scale" property so hover zooms still work) */
+.js-motion .reveal .img-settle {
+  scale: 1.1;
+  transition: scale 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js-motion .reveal.is-visible .img-settle {
+  scale: 1;
+}
+
+/* Eyebrow underline grows in when its heading is revealed */
+.eyebrow-line {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+.eyebrow-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 36px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.55;
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+.text-center .eyebrow-line::after {
+  left: 50%;
+  margin-left: -18px;
+  transform-origin: center;
+}
+.js-motion .reveal:not(.is-visible) .eyebrow-line::after {
+  transform: scaleX(0);
+}
+
+/* Hero copy entrance. The H1 only moves (never hidden) so it can't delay LCP. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes rise-move {
+  from {
+    transform: translateY(22px);
+  }
+  to {
+    transform: none;
+  }
+}
+.hero-in > * {
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-in > h1 {
+  animation-name: rise-move;
+}
+.hero-in > :nth-child(2) { animation-delay: 0.08s; }
+.hero-in > :nth-child(3) { animation-delay: 0.16s; }
+.hero-in > :nth-child(4) { animation-delay: 0.26s; }
+.hero-in > :nth-child(5) { animation-delay: 0.36s; }
+.hero-in > :nth-child(6) { animation-delay: 0.46s; }
+
+/* Lift cards on hover (pointer devices only) */
+@media (hover: hover) {
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* Reading progress bar driven by scroll position (no JavaScript) */
+.scroll-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 70;
+    background: linear-gradient(90deg, #e08a1e, #c4682c);
+    transform-origin: 0 50%;
+    animation: grow-x linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes grow-x {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  /* Gentle parallax on decorative background photos */
+  .parallax-img {
+    animation: parallax linear both;
+    animation-timeline: view();
+    animation-range: cover;
+  }
+  @keyframes parallax {
+    from { transform: translateY(-8%) scale(1.15); }
+    to { transform: translateY(8%) scale(1.15); }
+  }
+}
+
+/* Walking tiger pugmarks */
+@keyframes pug {
+  0%, 12% { opacity: 0; transform: scale(0.6); }
+  22%, 60% { opacity: 0.55; transform: none; }
+  80%, 100% { opacity: 0; }
+}
+.pug-trail > span {
+  animation: pug 4.8s ease-in-out infinite;
+  opacity: 0;
+}
+.pug-trail > span:nth-child(2) { animation-delay: 0.6s; }
+.pug-trail > span:nth-child(3) { animation-delay: 1.2s; }
+.pug-trail > span:nth-child(4) { animation-delay: 1.8s; }
+.pug-trail > span:nth-child(5) { animation-delay: 2.4s; }
+.pug-trail > span:nth-child(6) { animation-delay: 3s; }
+
 /* Topographic contour background (very subtle) */
 .bg-contour {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Cg fill='none' stroke='%231F3A2E' stroke-opacity='0.06' stroke-width='1.2'%3E%3Cpath d='M0 60c90 40 160-30 270 10s170 60 330 0'/%3E%3Cpath d='M0 120c100 30 170-40 290 5s160 55 310-5'/%3E%3Cpath d='M0 180c80 45 180-25 300 15s150 45 300-10'/%3E%3Cpath d='M0 240c110 35 160-35 280 10s180 60 320 0'/%3E%3Cpath d='M0 300c90 40 170-30 290 5s170 50 310-5'/%3E%3Cpath d='M0 360c100 30 180-40 300 10s150 55 300 0'/%3E%3C/g%3E%3C/svg%3E");
@@ -132,8 +297,19 @@ details.faq[open] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .js-motion .reveal {
+  .js-motion .reveal,
+  .js-motion .reveal.reveal-left,
+  .js-motion .reveal.reveal-right,
+  .js-motion .reveal.reveal-scale {
     opacity: 1;
     transform: none;
   }
+  .js-motion .reveal .img-settle { scale: 1; }
+  .hero-in > *,
+  .pug-trail > span { animation: none !important; opacity: 1; }
+  .pug-trail > span { opacity: 0.4; }
+  .scroll-progress,
+  .parallax-img { animation: none !important; }
+  .scroll-progress { display: none; }
+  .card-lift:hover { transform: none; }
 }

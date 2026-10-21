@@ -6,19 +6,12 @@ import { PAGES } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani Wildlife Sanctuary: Area, Forest, Wildlife & Rules',
+  title: 'Ratapani Wildlife Sanctuary: Area, Forest, Animals & Rules',
   description:
-    'Ratapani Wildlife Sanctuary (est. 1976) near Bhopal: 825 km² of teak and bamboo forest, reservoirs, flora, wildlife, rules and sanctuary vs tiger reserve.',
+    'Ratapani Wildlife Sanctuary near Bhopal: 825 km² teak forest declared in 1976. Area, reservoirs, flora, animals, rules and sanctuary vs tiger reserve.',
   path: PAGES.sanctuary.path,
   image: 'ratapani-wildlife-sanctuary-aerial',
-  keywords: [
-    'Ratapani Wildlife Sanctuary',
-    'Ratapani sanctuary area',
-    'Ratapani sanctuary Bhopal',
-    'Ratapani forest',
-    'Ratapani wildlife sanctuary established',
-    'Ratapani sanctuary Raisen',
-  ],
+  keywords: ['Ratapani Wildlife Sanctuary', 'Ratapani sanctuary', 'Ratapani sanctuary area', 'Ratapani forest'],
 };
 export const metadata = pageMetadata(META);
 
@@ -142,7 +135,7 @@ export default function SanctuaryPage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Conservation dossier"
-            title="Ratapani Wildlife Sanctuary in 4 points"
+            title="Ratapani Wildlife Sanctuary: key facts"
             items={[
               { icon: Waves, title: 'Water through the dry season', text: 'Ratapani Dam, Barna Reservoir and pools in seasonal streams hold water through summer and draw wildlife to their banks.' },
               { icon: Route, title: 'A tiger landscape near a capital', text: 'Tigers from Ratapani range up to the edge of Bhopal, making it one of the few tiger forests beside a state capital.' },
@@ -154,7 +147,7 @@ export default function SanctuaryPage() {
           {/* Overview */}
           <section aria-labelledby="overview-title" className="grid grid-cols-1 gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <SectionHeading eyebrow="Overview" title="Central India’s Forest on Bhopal’s Doorstep" id="overview-title" />
+              <SectionHeading eyebrow="Overview" title="About Ratapani Wildlife Sanctuary" id="overview-title" />
               <blockquote className="reveal border-l-4 border-ochre pl-5 font-serif text-2xl italic leading-snug text-ink">
                 Few capitals anywhere have wild tigers living within an hour’s drive. Bhopal has Ratapani.
               </blockquote>
@@ -195,7 +188,7 @@ export default function SanctuaryPage() {
           <section aria-labelledby="geo-title">
             <SectionHeading
               eyebrow="Topography & water"
-              title="Terrain of Hills, Gorges & Reservoirs"
+              title="Ratapani Sanctuary Geography: Hills, Gorges & Reservoirs"
               intro="Sandstone ridges of the Vindhya range break into gorges, plateaus and valleys, with streams that drain south towards the Narmada."
               id="geo-title"
               tone="moss"
@@ -245,14 +238,14 @@ export default function SanctuaryPage() {
           <section aria-labelledby="forest-title">
             <SectionHeading
               eyebrow="Forest types"
-              title="Three Forest Ecosystems of Ratapani"
+              title="Forest Types of Ratapani Wildlife Sanctuary"
               intro="Ratapani’s forests are dry and moist deciduous, structured by teak, mixed species and bamboo."
               id="forest-title"
               align="center"
             />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {FOREST_TYPES.map((f, i) => (
-                <article key={f.title} className="reveal flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
+                <article key={f.title} className="reveal card-lift flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
                   <div className="mb-4 flex items-center justify-between">
                     <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary-soft text-secondary">
                       <f.icon className="h-6 w-6" aria-hidden />
@@ -281,7 +274,7 @@ export default function SanctuaryPage() {
             <SectionHeading
               eyebrow="Flora highlights"
               tone="ochre"
-              title="Botanical Icons of the Vindhyan Forest"
+              title="Ratapani Flora: Palash, Kullu, Mahua & Teak"
               intro="Three trees that define the look, seasons and food web of Ratapani."
               id="flora-title"
             />
@@ -396,7 +389,7 @@ export default function SanctuaryPage() {
 
       <CtaBand
         eyebrow="Begin your sanctuary drive"
-        title="Reserve Your Ratapani Safari for the Coming Season"
+        title="Book a Ratapani Wildlife Sanctuary Safari"
         text="Vehicle quotas at each gate are small. Learn how to book your permit online and which gate suits you."
         primary={{ href: PAGES.bookSafari.path, label: 'How to book a safari' }}
         secondary={{ href: PAGES.gates.path, label: 'Compare safari gates' }}

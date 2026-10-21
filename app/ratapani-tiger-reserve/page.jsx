@@ -6,20 +6,12 @@ import { PAGES, FURTHER_READING } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani Tiger Reserve: Area, Tigers, Core & Buffer Zones',
+  title: 'Ratapani Tiger Reserve: Area, Tigers, Core & Buffer Zone',
   description:
-    'Ratapani Tiger Reserve, MP’s 8th and India’s 57th (notified 2 Dec 2024): 1,271 km² area, core vs buffer zones, tiger numbers and corridors.',
+    'Ratapani Tiger Reserve, MP’s 8th tiger reserve: 1,271 km² area, 763.8 km² core and 507.7 km² buffer, tiger count, corridors and notification date.',
   path: PAGES.tigerReserve.path,
   image: 'ratapani-tiger-reserve-tiger',
-  keywords: [
-    'Ratapani Tiger Reserve',
-    'Ratapani tiger reserve area',
-    'how many tigers in Ratapani',
-    'Ratapani tiger reserve core and buffer',
-    'Madhya Pradesh 8th tiger reserve',
-    'India 57th tiger reserve',
-    'tiger reserve near Bhopal',
-  ],
+  keywords: ['Ratapani Tiger Reserve', 'Ratapani tiger reserve area', 'Ratapani tigers', 'Ratapani core zone', 'Ratapani buffer zone'],
 };
 export const metadata = pageMetadata(META);
 
@@ -117,7 +109,7 @@ export default function TigerReservePage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Executive brief"
-            title="Why Ratapani Tiger Reserve matters"
+            title="Ratapani Tiger Reserve: key facts"
             items={[
               { icon: Building2, title: 'A tiger reserve beside a capital', text: 'Ratapani borders Bhopal; some of its tigers are known as “city tigers” because they range up to the city edge.' },
               { icon: Hourglass, title: 'A 16-year journey', text: 'NTCA approval came in 2008; the state notified the reserve on 2 December 2024.' },
@@ -279,7 +271,7 @@ export default function TigerReservePage() {
             <div>
               <SectionHeading
                 eyebrow="Connectivity"
-                title="Ratapani’s Wildlife Corridors"
+                title="Ratapani Tiger Reserve Wildlife Corridors"
                 intro="Tigers need room to move. Ratapani sits at a crossroads of forests in central Madhya Pradesh."
                 id="corridor-title"
                 tone="moss"
@@ -302,7 +294,7 @@ export default function TigerReservePage() {
                 ))}
               </ol>
             </div>
-            <div className="reveal relative min-h-[420px] overflow-hidden rounded-card bg-forest shadow-lg">
+            <div className="reveal reveal-scale relative min-h-[420px] overflow-hidden rounded-card bg-forest shadow-lg">
               <Img name="ratapani-vintage-field-map" sizes="(min-width: 1024px) 50vw, 100vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               <div className="absolute inset-x-5 bottom-5 rounded-xl bg-forest-deep/90 p-4 text-white backdrop-blur-md">
@@ -320,7 +312,7 @@ export default function TigerReservePage() {
           <section aria-labelledby="challenges-title">
             <SectionHeading
               eyebrow="On the ground"
-              title="Conservation Challenges & Efforts"
+              title="Ratapani Tiger Reserve Conservation Challenges"
               intro="A new tiger reserve beside a growing city faces real challenges. These are the issues managers are working on."
               id="challenges-title"
             />
@@ -331,7 +323,7 @@ export default function TigerReservePage() {
                 [Wheat, 'Prey base', 'Herbivore density is lower than in older reserves, so grassland and water development is a priority.'],
                 [Fence, 'Bhopal boundary', 'A tall fence and patrol road along the boundary near Bhopal aim to reduce tiger movement into the city.'],
               ].map(([Icon, t, d], i) => (
-                <article key={t} className="reveal rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
+                <article key={t} className="reveal card-lift rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 80}ms` }}>
                   <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-fixed text-primary">
                     <Icon className="h-6 w-6" aria-hidden />
                   </span>
@@ -346,7 +338,7 @@ export default function TigerReservePage() {
           <section aria-labelledby="mp-title">
             <SectionHeading
               eyebrow="Tiger State of India"
-              title="Ratapani vs Other Madhya Pradesh Tiger Reserves"
+              title="Ratapani vs Kanha, Bandhavgarh & Other MP Tiger Reserves"
               intro="Madhya Pradesh has more tigers than any other state. Here is how Ratapani compares with its best-known reserves."
               id="mp-title"
             />
@@ -414,7 +406,7 @@ export default function TigerReservePage() {
 
       <CtaBand
         eyebrow="Daily vehicle quotas apply"
-        title="Step Into the Realm of Central India’s Apex Predator"
+        title="Book a Ratapani Tiger Safari"
         text="Morning and evening permits for Jhiri and Delawadi are limited. Book through the official MP Forest portal, and use our guide to get it right the first time."
         primary={{ href: PAGES.bookSafari.path, label: 'Book your tiger safari' }}
         secondary={{ href: PAGES.gates.path, label: 'View safari gates' }}

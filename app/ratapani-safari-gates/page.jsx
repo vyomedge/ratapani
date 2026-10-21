@@ -3,24 +3,16 @@ import Img from '@/components/Img';
 import JsonLd from '@/components/JsonLd';
 import GateMap from '@/components/GateMap';
 import { PageHero, KeyTakeaways, Faq, CtaBand, SectionHeading, TableWrap, Sources } from '@/components/ui';
-import { PAGES, OFFICIAL_BOOKING_URL } from '@/lib/site';
-import { pageMetadata, webPageSchema } from '@/lib/seo';
+import { PAGES, OFFICIAL_BOOKING_URL, absoluteUrl } from '@/lib/site';
+import { pageMetadata, webPageSchema, itemListSchema, placeId } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani Safari Gates: Jhiri, Delawadi & Bhimbetka Compared',
+  title: 'Ratapani Safari Gates: Jhiri, Delawadi & Bhimbetka Gate',
   description:
-    'Ratapani safari gates compared: Jhiri (34 km from Bhopal), Bhimbetka (44 km) and Delawadi (52 km). Booking type, quotas, fees and which gate to pick.',
+    'Gates in Ratapani compared: Jhiri gate (34 km from Bhopal), Bhimbetka gate (44 km) and Delawadi gate (52 km). Booking, quotas, fees, best gate.',
   path: PAGES.gates.path,
   image: 'ratapani-safari-gate-entrance',
-  keywords: [
-    'Ratapani safari gates',
-    'Ratapani safari zones',
-    'Jhiri gate Ratapani',
-    'Delawadi gate Ratapani',
-    'Bhimbetka gate Ratapani safari',
-    'Ratapani entry gate',
-    'which gate is best for Ratapani safari',
-  ],
+  keywords: ['Ratapani safari gates', 'gates in Ratapani', 'Jhiri gate Ratapani', 'Delawadi gate Ratapani', 'Bhimbetka gate Ratapani'],
 };
 export const metadata = pageMetadata(META);
 
@@ -114,10 +106,22 @@ export default function GatesPage() {
   return (
     <>
       <JsonLd data={webPageSchema({ ...META, type: 'Article' })} />
+      <JsonLd
+        data={itemListSchema(
+          'Gates in Ratapani Tiger Reserve',
+          GATES.map((g) => ({
+            '@type': 'TouristAttraction',
+            name: `${g.title}, Ratapani Tiger Reserve`,
+            description: g.summary,
+            url: absoluteUrl(`${META.path}#${g.id}`),
+            containedInPlace: { '@id': placeId },
+          }))
+        )}
+      />
       <PageHero
         image={META.image}
         eyebrow="Sanctuary access · Entry gates"
-        title="Ratapani Safari Gates"
+        title="Ratapani Safari Gates: Jhiri, Delawadi & Bhimbetka"
         intro="Jhiri, Delawadi and Bhimbetka: a field guide to Ratapani’s three entry points, comparing distance from Bhopal, online vs offline booking, vehicle quotas, fees and terrain."
         crumbs={CRUMBS}
         badges={[
@@ -131,7 +135,7 @@ export default function GatesPage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Gate dossier"
-            title="Ratapani gates in 30 seconds"
+            title="Gates in Ratapani at a glance"
             items={[
               { icon: MapPin, title: 'Jhiri: closest to Bhopal', text: '34 km from Bhopal railway station; the largest online quota; ₹4,230 per full vehicle.' },
               { icon: Compass, title: 'Delawadi: the quiet west', text: '52 km from Bhopal; lowest vehicle fee (₹3,830 per full vehicle); walk to Ginnorgarh Fort.' },
@@ -143,7 +147,7 @@ export default function GatesPage() {
           <section aria-labelledby="map-title">
             <SectionHeading
               eyebrow="Gate map"
-              title="Map of Ratapani Safari Gates"
+              title="Ratapani Safari Gates Map"
               intro="Where the three gates sit in relation to Bhopal, NH-46 and the main reservoirs. Tap a gate to see its details."
               id="map-title"
             />
@@ -155,7 +159,7 @@ export default function GatesPage() {
           <section aria-labelledby="gates-title">
             <SectionHeading
               eyebrow="Gate profiles"
-              title="The Three Ratapani Safari Gates"
+              title="Jhiri Gate, Delawadi Gate & Bhimbetka Gate"
               intro="Each gate has its own access road, booking rules and character. Read the profiles before you book."
               id="gates-title"
               tone="moss"
@@ -242,7 +246,7 @@ export default function GatesPage() {
                 [Camera, 'The photographer', 'Book Delawadi (or both)', 'Delawadi’s teak valleys and sandstone ridges give clean backgrounds and fewer vehicles around a sighting.', 'Book a morning and an evening round on different gates to see more of the forest.'],
                 [Users, 'Families & self-drivers', 'Use Bhimbetka gate', 'Book at the gate, drive your own vehicle and pair the safari with a short walk through the painted shelters.', 'Arrive early on weekends; offline quotas go on a first-come basis.'],
               ].map(([Icon, who, rec, why, tip], i) => (
-                <article key={who} className="reveal flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
+                <article key={who} className="reveal card-lift flex flex-col rounded-card bg-white p-6 shadow-md" style={{ '--reveal-delay': `${i * 90}ms` }}>
                   <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-fixed text-primary">
                     <Icon className="h-6 w-6" aria-hidden />
                   </span>
@@ -275,7 +279,7 @@ export default function GatesPage() {
 
       <CtaBand
         eyebrow="Reserve your entry"
-        title="Ready to Book Your Ratapani Safari?"
+        title="Book Your Ratapani Gate Safari"
         text="You know your gate. Now follow our step-by-step guide to book the permit on the official MP Forest portal."
         primary={{ href: PAGES.bookSafari.path, label: 'Book Ratapani tiger safari' }}
         secondary={{ href: PAGES.tigerReserve.path, label: 'About the tiger reserve' }}

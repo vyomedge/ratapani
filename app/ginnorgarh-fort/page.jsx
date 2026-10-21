@@ -7,20 +7,12 @@ import { PAGES, FURTHER_READING, absoluteUrl } from '@/lib/site';
 import { pageMetadata, webPageSchema, placeId } from '@/lib/seo';
 
 const META = {
-  title: 'Ginnorgarh Fort: History, Trek & How to Visit (Ratapani)',
+  title: 'Ginnorgarh Fort Ratapani: History, Trek & How to Reach',
   description:
-    'Ginnorgarh Fort, the ruined Gond hill fort inside Ratapani Tiger Reserve: Rani Kamlapati and Dost Mohammad Khan, what to see, the trek from Delawadi and visiting tips.',
+    'Ginnorgarh Fort (Ginnourgarh) in Ratapani Tiger Reserve: Gond history, Rani Kamlapati, ruins to see, the trek from Delawadi and how to reach.',
   path: PAGES.ginnorgarh.path,
   image: 'ginnorgarh-fort-ruins-forest',
-  keywords: [
-    'Ginnorgarh Fort',
-    'Ginnourgarh Fort',
-    'Ginnorgarh fort history',
-    'Ginnorgarh fort Ratapani',
-    'Rani Kamlapati fort',
-    'Ginnorgarh fort trek',
-    'how to reach Ginnorgarh fort',
-  ],
+  keywords: ['Ginnorgarh Fort', 'Ginnourgarh Fort', 'Ginnorgarh fort history', 'Ginnorgarh fort trek', 'Rani Kamlapati fort'],
 };
 export const metadata = pageMetadata(META);
 
@@ -93,7 +85,7 @@ export default function GinnorgarhPage() {
       <PageHero
         image={META.image}
         eyebrow="Gond hill fort · Inside Ratapani Tiger Reserve"
-        title="Ginnorgarh Fort"
+        title="Ginnorgarh Fort, Ratapani: History & Trek"
         intro="The forgotten Gond citadel of Ratapani: a ruined palace on a forest hilltop where Rani Kamlapati’s story set in motion the birth of Bhopal State, now surrounded by tiger country."
         crumbs={CRUMBS}
         badges={[
@@ -152,7 +144,7 @@ export default function GinnorgarhPage() {
                 <Crown className="h-4 w-4" aria-hidden /> Story &amp; legend
               </p>
               <h2 id="kamlapati-title" className="mb-4 text-[2rem] leading-tight md:text-headline-lg">
-                Rani Kamlapati, Dost Mohammad Khan &amp; the Birth of Bhopal
+                Ginnorgarh Fort and Rani Kamlapati: The Birth of Bhopal
               </h2>
               <div className="space-y-4 text-lg leading-relaxed text-white/85">
                 <p>
@@ -233,7 +225,7 @@ export default function GinnorgarhPage() {
             </section>
 
             <section aria-labelledby="nearby-title">
-              <SectionHeading eyebrow="Nearby" title="Combine Ginnorgarh with Other Ratapani Sights" id="nearby-title" tone="ochre" />
+              <SectionHeading eyebrow="Nearby" title="Places Near Ginnorgarh Fort" id="nearby-title" tone="ochre" />
               <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {[
                   ['Delawadi safari zone', 'Tiger safari in the western teak valleys', PAGES.gates.path + '#delawadi-gate'],
@@ -288,7 +280,7 @@ export default function GinnorgarhPage() {
 
       <CtaBand
         eyebrow="Fort & forest"
-        title="Pair a Fort Trek with a Delawadi Tiger Safari"
+        title="Ginnorgarh Fort Trek + Ratapani Safari"
         text="Ginnorgarh lies on the Delawadi side of Ratapani. Book a morning safari and explore the fort’s story on the same trip."
         primary={{ href: PAGES.bookSafari.path, label: 'Book a safari' }}
         secondary={{ href: PAGES.reach.path, label: 'How to reach' }}

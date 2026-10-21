@@ -13,7 +13,7 @@ export function SectionHeading({ eyebrow, title, intro, tone = 'primary', align 
   const toneClass = dark ? 'text-amber' : tone === 'ochre' ? 'text-tertiary' : tone === 'moss' ? 'text-secondary' : 'text-primary';
   return (
     <div className={`reveal mb-10 ${align === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-3xl'}`}>
-      {eyebrow && <span className={`eyebrow ${toneClass}`}>{eyebrow}</span>}
+      {eyebrow && <span className={`eyebrow ${toneClass}`}><span className="eyebrow-line">{eyebrow}</span></span>}
       <H id={id} className={`text-[2rem] leading-tight tracking-tight md:text-headline-lg ${dark ? 'text-white' : 'text-ink'}`}>
         {title}
       </H>
@@ -31,7 +31,7 @@ export function PageHero({ image, eyebrow, title, intro, crumbs, badges = [], po
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/70 via-transparent to-transparent" />
       </div>
-      <div className="container-site relative z-10 pb-14 pt-36 lg:pb-20">
+      <div className="container-site hero-in relative z-10 pb-14 pt-36 lg:pb-20">
         <Breadcrumbs crumbs={crumbs} light />
         {eyebrow && (
           <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-forest/80 px-4 py-1.5 backdrop-blur-md">
@@ -102,7 +102,7 @@ export function KeyTakeaways({ title = 'Key takeaways', items, eyebrow = 'Quick 
       <h2 id="key-takeaways" className="mb-6 text-headline-sm text-ink md:text-headline-md">
         {title}
       </h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div data-speakable className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {items.map((it) => (
           <div key={it.title} className="flex items-start gap-3 rounded-xl bg-surface p-4">
             <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary-fixed text-primary">
@@ -168,7 +168,7 @@ function RockFigure() {
 }
 
 /* ---------------- Related pages cards ---------------- */
-export function RelatedCards({ title = 'Explore related chapters', eyebrow = 'Continue exploring', cards }) {
+export function RelatedCards({ title = 'More Ratapani travel guides', eyebrow = 'Continue exploring', cards }) {
   return (
     <section aria-labelledby="related-title">
       <SectionHeading eyebrow={eyebrow} title={title} id="related-title" />
@@ -177,7 +177,7 @@ export function RelatedCards({ title = 'Explore related chapters', eyebrow = 'Co
           <Link
             key={c.href}
             href={c.href}
-            className="reveal group flex flex-col overflow-hidden rounded-card bg-white shadow-sm transition-shadow hover:shadow-lift"
+            className="reveal card-lift group flex flex-col overflow-hidden rounded-card bg-white shadow-sm hover:shadow-lift"
             style={{ '--reveal-delay': `${i * 90}ms` }}
           >
             <div className="relative h-52 overflow-hidden bg-forest">
@@ -206,6 +206,7 @@ export function RelatedCards({ title = 'Explore related chapters', eyebrow = 'Co
 export function CtaBand({ eyebrow, title, text, primary, secondary }) {
   return (
     <section className="relative overflow-hidden bg-forest bg-contour-light py-20 text-sand">
+      <PugTrail />
       <div className="container-site relative z-10 flex flex-col items-center text-center">
         {eyebrow && <span className="eyebrow text-amber">{eyebrow}</span>}
         <h2 className="reveal max-w-3xl text-[2rem] leading-tight text-white md:text-display-lg">{title}</h2>
@@ -224,6 +225,22 @@ export function CtaBand({ eyebrow, title, text, primary, secondary }) {
         </div>
       </div>
     </section>
+  );
+}
+
+/* Decorative trail of tiger pugmarks walking across a band */
+function PugTrail() {
+  const steps = [
+    [4, 84, -10], [8, 70, 6], [5, 56, -8], [10, 42, 4], [6, 28, -6], [11, 14, 8],
+  ];
+  return (
+    <div className="pug-trail pointer-events-none absolute inset-0 hidden text-amber xl:block" aria-hidden>
+      {steps.map(([x, y, r], i) => (
+        <span key={i} className="absolute" style={{ left: `${x}%`, top: `${y}%`, rotate: `${r}deg` }}>
+          <PawPrint className="h-7 w-7" />
+        </span>
+      ))}
+    </div>
   );
 }
 
@@ -278,7 +295,7 @@ export function Sources({ items }) {
   return (
     <section aria-labelledby="sources-title" className="rounded-card border border-forest/10 bg-surface-low p-6">
       <h2 id="sources-title" className="mb-3 font-label text-label-md uppercase text-outline">
-        Sources &amp; references
+        Sources for this Ratapani guide
       </h2>
       <ul className="space-y-1.5 text-sm text-ink-soft">
         {items.map((s) => (

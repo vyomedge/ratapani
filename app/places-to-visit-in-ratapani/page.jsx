@@ -7,20 +7,12 @@ import { PAGES, SITE, FURTHER_READING, absoluteUrl } from '@/lib/site';
 import { pageMetadata, webPageSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Places to Visit in Ratapani: 12 Sights, Forts & Lakes',
+  title: 'Places to Visit in Ratapani: 12 Best Tourist Places',
   description:
-    'Best places to visit in and around Ratapani: Bhimbetka rock shelters, Ginnorgarh Fort, Ratapani & Kolar dams, Bhojpur temple, Saru Maru caves, safari zones and 1–2 day itineraries.',
+    'Places to visit in Ratapani: Bhimbetka, Ginnorgarh Fort, Ratapani Dam, Kolar Dam, Bhojpur Temple, Saru Maru caves and safari zones, with itineraries.',
   path: PAGES.places.path,
   image: 'bhimbetka-sandstone-towers-sunset',
-  keywords: [
-    'places to visit in Ratapani',
-    'Ratapani tourist places',
-    'places near Ratapani',
-    'things to do in Ratapani',
-    'Ratapani itinerary',
-    'places to visit near Bhopal',
-    'Bhimbetka and Ratapani',
-  ],
+  keywords: ['places to visit in Ratapani', 'Ratapani tourist places', 'places near Ratapani', 'Ratapani itinerary'],
 };
 export const metadata = pageMetadata(META);
 
@@ -234,7 +226,7 @@ export default function PlacesPage() {
         <div className="container-site space-y-24">
           <KeyTakeaways
             eyebrow="Field briefing"
-            title="What makes the Ratapani circuit special"
+            title="Ratapani tourist places at a glance"
             items={[
               { icon: Landmark, title: 'Prehistory inside the forest', text: 'Bhimbetka’s painted shelters lie within Ratapani itself, a rare mix of tigers and World Heritage.' },
               { icon: Waves, title: 'Reservoirs and wetlands', text: 'Ratapani Dam, Barna and nearby Kolar Dam bring water, birds and sunset views.' },
@@ -246,7 +238,7 @@ export default function PlacesPage() {
           <section aria-labelledby="places-title">
             <SectionHeading
               eyebrow="Destinations"
-              title="12 Best Places to Visit in and Around Ratapani"
+              title="12 Best Places to Visit in Ratapani"
               intro="Filter by what you love: wildlife, heritage, lakes or temples."
               id="places-title"
             />
@@ -261,7 +253,7 @@ export default function PlacesPage() {
               intro="Balanced routes that pair early-morning safaris with heritage stops in the middle of the day."
               id="itinerary-title"
             />
-            <div className="reveal rounded-card bg-white p-6 shadow-md md:p-8">
+            <div className="reveal card-lift rounded-card bg-white p-6 shadow-md md:p-8">
               <Tabs label="itinerary" tabs={[{ label: '1-day highlights', sub: 'Safari + Bhimbetka' }, { label: '2-day explorer', sub: 'Wildlife, forts & temples' }]}>
                 <Timeline
                   items={[
@@ -323,7 +315,7 @@ export default function PlacesPage() {
 
       <CtaBand
         eyebrow="Plan the circuit"
-        title="Ready to Explore the Ancient Vindhyan Heartland?"
+        title="Plan Your Ratapani Sightseeing Trip"
         text="Check the safari gates and the best season, then build your own Ratapani circuit."
         primary={{ href: PAGES.gates.path, label: 'Safari gates' }}
         secondary={{ href: PAGES.bestTime.path, label: 'Best time to visit' }}

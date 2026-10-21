@@ -18,24 +18,15 @@ import CountUp from '@/components/CountUp';
 import WildlifeCarousel from '@/components/WildlifeCarousel';
 import { SectionHeading, Faq, RockArtStrip } from '@/components/ui';
 import { PAGES, OFFICIAL_BOOKING_URL } from '@/lib/site';
-import { pageMetadata, webPageSchema } from '@/lib/seo';
+import { pageMetadata, webPageSchema, destinationSchema } from '@/lib/seo';
 
 const META = {
-  title: 'Ratapani Tiger Reserve & Jungle Safari Guide | Near Bhopal',
+  title: 'Ratapani Tiger Reserve & Jungle Safari Guide | Bhopal',
   description:
-    'Plan your Ratapani jungle safari: online booking, gates, fees, timings, tigers and Bhimbetka. The complete guide to Ratapani Tiger Reserve near Bhopal.',
+    'Ratapani Tiger Reserve guide: jungle safari booking, gates, fees, timings, tigers and Bhimbetka. Just 34 km from Bhopal, Madhya Pradesh.',
   path: '/',
   image: 'ratapani-tiger-walking-teak-forest',
-  keywords: [
-    'Ratapani Tiger Reserve',
-    'Ratapani jungle safari',
-    'Ratapani Wildlife Sanctuary',
-    'Ratapani safari booking',
-    'jungle safari near Bhopal',
-    'tiger reserve near Bhopal',
-    'Bhimbetka',
-    'Madhya Pradesh tiger reserve',
-  ],
+  keywords: ['Ratapani Tiger Reserve', 'Ratapani jungle safari', 'Ratapani tiger safari', 'Ratapani Wildlife Sanctuary', 'jungle safari near Bhopal', 'tiger reserve near Bhopal'],
 };
 
 export const metadata = { ...pageMetadata(META), title: { absolute: META.title } };
@@ -176,6 +167,7 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={webPageSchema({ ...META, type: 'WebPage' })} />
+      <JsonLd data={destinationSchema()} />
 
       {/* 1. HERO */}
       <section className="relative overflow-hidden bg-forest">
@@ -185,7 +177,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-transparent to-transparent" />
         </div>
         <div className="container-site relative z-10 flex min-h-[92svh] flex-col justify-end pb-16 pt-36 md:pb-24">
-          <div className="max-w-3xl">
+          <div className="hero-in max-w-3xl">
             <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-forest/80 px-4 py-1.5 backdrop-blur-md">
               <span className="h-2 w-2 animate-pulse rounded-full bg-amber" />
               <span className="font-label text-label-md uppercase text-primary-fixed">Tiger Reserve · Madhya Pradesh</span>
@@ -241,7 +233,7 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <span className="eyebrow reveal text-tertiary">What is Ratapani?</span>
             <h2 className="reveal text-[2.25rem] leading-tight tracking-tight text-ink md:text-display-lg">
-              A Wilderness Awakens in the Vindhya Range
+              What Is Ratapani Tiger Reserve?
             </h2>
             <div className="reveal mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
               <p>
@@ -309,7 +301,7 @@ export default function HomePage() {
           <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div className="reveal max-w-xl">
               <span className="eyebrow text-primary">Ratapani guides</span>
-              <h2 className="text-[2rem] leading-tight tracking-tight text-ink md:text-headline-lg">Key Pillars of the Ratapani Landscape</h2>
+              <h2 className="text-[2rem] leading-tight tracking-tight text-ink md:text-headline-lg">Ratapani Travel Guides: History, Tigers & Heritage</h2>
             </div>
             <p className="reveal max-w-md text-ink-soft">
               From prehistoric rock art to tiger corridors, every side of Ratapani explained by topic.
@@ -347,7 +339,7 @@ export default function HomePage() {
           heading={
             <div className="reveal">
               <span className="eyebrow text-tertiary">Ratapani wildlife</span>
-              <h2 className="text-[2.25rem] leading-tight tracking-tight text-ink md:text-display-lg">Animals of the Teak Forest</h2>
+              <h2 className="text-[2.25rem] leading-tight tracking-tight text-ink md:text-display-lg">Ratapani Wildlife: Animals of the Teak Forest</h2>
               <Link href={PAGES.wildlife.path} className="mt-3 inline-flex items-center gap-1 font-label text-label-md uppercase text-primary">
                 Full wildlife guide <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
@@ -378,7 +370,7 @@ export default function HomePage() {
       {/* 6. SAFARI PLANNING */}
       <section id="safari-planning" className="bg-forest py-20 text-sand md:py-24">
         <div className="container-site grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-          <div className="reveal relative h-[420px] overflow-hidden rounded-card shadow-2xl md:h-[560px] lg:col-span-5">
+          <div className="reveal reveal-scale relative h-[420px] overflow-hidden rounded-card shadow-2xl md:h-[560px] lg:col-span-5">
             <Img name="ratapani-jungle-safari-jeep" sizes="(min-width: 1024px) 40vw, 100vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
             <div className="absolute inset-x-6 bottom-6 rounded-xl bg-forest-deep/85 p-4 backdrop-blur-md">
@@ -389,7 +381,7 @@ export default function HomePage() {
           <div className="lg:col-span-7">
             <span className="eyebrow reveal text-amber">Safari planning</span>
             <h2 className="reveal mb-8 text-[2.25rem] leading-tight tracking-tight text-white md:text-display-lg">
-              How to Book a Ratapani Jungle Safari
+              How to Book a Ratapani Tiger Safari
             </h2>
             <ol className="mb-10 space-y-4">
               {STEPS.map((s, i) => (
@@ -419,7 +411,7 @@ export default function HomePage() {
         <div className="container-site">
           <SectionHeading
             eyebrow="Best time to visit Ratapani"
-            title="Seasons of the Ratapani Forest"
+            title="Best Time to Visit Ratapani: Seasons"
             intro="The Forest Department recommends visiting between 15 October and 15 June. Each season changes the colour, light and wildlife behaviour of the teak forest."
             align="center"
             tone="ochre"
@@ -459,7 +451,7 @@ export default function HomePage() {
               <span className="font-label text-label-sm uppercase">UNESCO World Heritage Site · 2003</span>
             </p>
             <h2 className="reveal mb-6 text-[2.25rem] leading-tight tracking-tight text-white md:text-display-lg">
-              Prehistoric Art in the Tiger’s Backyard
+              Bhimbetka Rock Shelters: Prehistoric Art in Ratapani
             </h2>
             <p className="reveal mb-4 text-lg leading-relaxed text-white/90">
               Inside the Ratapani forest lie the <strong>Bhimbetka rock shelters</strong>: more than 750 sandstone shelters spread over
@@ -494,7 +486,7 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <SectionHeading
               eyebrow="Where is Ratapani?"
-              title="Map of the Ratapani Landscape"
+              title="Ratapani Location & Map"
               intro="Ratapani covers parts of Raisen and Sehore districts on the southern edge of the Vindhya range, between Bhopal and the Narmada valley."
             />
             <ul className="reveal space-y-3 rounded-xl bg-surface-mid p-5 shadow-sm">
@@ -537,7 +529,7 @@ export default function HomePage() {
       {/* 10. FAQ */}
       <section className="bg-surface-low py-20 md:py-24">
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
-          <Faq faqs={FAQS} title="Ratapani Safari: Frequently Asked Questions" eyebrow="Quick answers" center />
+          <Faq faqs={FAQS} title="Ratapani Jungle Safari: FAQs" eyebrow="Quick answers" center />
           <div className="mt-8 text-center">
             <Link href={PAGES.faqs.path} className="btn-outline">
               See all 43 Ratapani FAQs
@@ -552,7 +544,7 @@ export default function HomePage() {
           <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div className="reveal">
               <span className="eyebrow text-primary">Field journal</span>
-              <h2 className="text-[2rem] leading-tight tracking-tight text-ink md:text-headline-lg">Stories from the Teak Forest</h2>
+              <h2 className="text-[2rem] leading-tight tracking-tight text-ink md:text-headline-lg">Ratapani Travel Stories & Guides</h2>
             </div>
             <p className="reveal max-w-sm text-ink-soft">In-depth guides now; research, articles and field notes coming soon.</p>
           </div>
@@ -590,7 +582,7 @@ export default function HomePage() {
             <Mail className="h-6 w-6 text-amber" aria-hidden />
           </span>
           <span className="eyebrow text-amber">The Forest Dispatch</span>
-          <h2 className="reveal mb-3 text-[2rem] leading-tight text-white md:text-headline-lg">Stay Connected to the Vindhya Wilderness</h2>
+          <h2 className="reveal mb-3 text-[2rem] leading-tight text-white md:text-headline-lg">Ratapani Newsletter: Launching Soon</h2>
           <p className="reveal mb-8 max-w-xl text-white/80">
             Seasonal wildlife updates, tiger news, research and photography from Ratapani. Our newsletter is launching soon.
           </p>
